@@ -1,1 +1,117 @@
-# portal-secreto
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Solo para ti</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #0d0d0d;
+      color: #eaeaea;
+      font-family: 'Georgia', serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .box {
+      max-width: 600px;
+      padding: 40px;
+      border: 1px solid #444;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+    }
+
+    input {
+      padding: 10px;
+      font-size: 18px;
+      width: 120px;
+      text-align: center;
+      background: #111;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 6px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #222;
+      color: #fff;
+      border: 1px solid #666;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #333;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .message {
+      white-space: pre-line;
+      margin-top: 20px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box" id="lock">
+  <p>Ingresa el número correcto</p>
+  <input type="number" id="code" />
+  <br>
+  <button onclick="unlock()">Entrar</button>
+</div>
+
+<div class="box hidden" id="content">
+  <div class="message">
+RECUERDA  
+19 5 3 22 5 19 4 1  
+9 4 5 5 14 5 19 16  
+
+3 22 1 14 4 16  
+21 16 4 16  
+3 16 13 5 14 27 16  
+
+5 20 21 5  
+12 22 7 1 19  
+7 22 1 19 4 1  
+
+13 9 20  
+3 1 19 21 1 20  
+13 9 20  
+17 19 16 13 5 20 1 20  
+
+26  
+13 9  
+6 22 21 22 19 16  
+3 16 14 21 9 7 16  
+
+21 5  
+1 13 16
+  </div>
+</div>
+
+<script>
+  function unlock() {
+    const value = document.getElementById("code").value;
+    if (value === "15") {
+      document.getElementById("lock").classList.add("hidden");
+      document.getElementById("content").classList.remove("hidden");
+    } else {
+      alert("No es ese número");
+    }
+  }
+</script>
+
+</body>
+</html>
