@@ -5,9 +5,21 @@
   <title>Solo para ti</title>
   <style>
     body {
+      .title {
+  font-size: 32px;
+  margin-bottom: 5px;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #bbbbbb;
+  margin-bottom: 30px;
+  font-style: italic;
+}
       margin: 0;
       height: 100vh;
-      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      background: #3a1c2e;
       color: #eaeaea;
       font-family: 'Georgia', serif;
       display: flex;
@@ -66,6 +78,9 @@
 <body>
 
 <div class="box" id="lock">
+  <h1 class="title">Nuestro Lugar Secreto</h1>
+  <p class="subtitle">Algunas fechas no se olvidan</p>
+  
   <p>Ingresa el número correcto</p>
   <input type="number" id="code" />
   <br>
