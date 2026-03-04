@@ -7,7 +7,7 @@
     body {
       margin: 0;
       height: 100vh;
-      background: #0d0d0d;
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
       color: #eaeaea;
       font-family: 'Georgia', serif;
       display: flex;
