@@ -10,6 +10,20 @@
   margin-bottom: 5px;
   letter-spacing: 2px;
 }
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, #ffffff, transparent),
+    radial-gradient(2px 2px at 70% 80%, #ffffff, transparent),
+    radial-gradient(1px 1px at 40% 60%, #ffffff, transparent),
+    radial-gradient(2px 2px at 90% 20%, #ffffff, transparent),
+    radial-gradient(1px 1px at 10% 90%, #ffffff, transparent);
+  opacity: 0.25;
+  pointer-events: none;
+}
 
 .subtitle {
   font-size: 16px;
