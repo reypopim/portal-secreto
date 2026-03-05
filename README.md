@@ -10,21 +10,6 @@
   margin-bottom: 5px;
   letter-spacing: 2px;
 }
-body::before {
-  content: "";
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-image:
-    radial-gradient(2px 2px at 20% 30%, #ffffff, transparent),
-    radial-gradient(2px 2px at 70% 80%, #ffffff, transparent),
-    radial-gradient(1px 1px at 40% 60%, #ffffff, transparent),
-    radial-gradient(2px 2px at 90% 20%, #ffffff, transparent),
-    radial-gradient(1px 1px at 10% 90%, #ffffff, transparent);
-  opacity: 0.25;
-  pointer-events: none;
-}
-
 .subtitle {
   font-size: 16px;
   color: #bbbbbb;
@@ -43,12 +28,20 @@ body::before {
     }
 
     .box {
-      max-width: 600px;
-      padding: 40px;
-      border: 1px solid #444;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.03);
-    }
+  animation: aparecer 1.5s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
     input {
       padding: 10px;
