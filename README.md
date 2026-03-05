@@ -123,7 +123,7 @@ RECUERDA
       document.getElementById("lock").classList.add("hidden");
       document.getElementById("content").classList.remove("hidden");
     } else {
-      alert("No es ese número");
+      alert("Amor, intentalo otra vez");
     }
   }
 </script>
