@@ -4,21 +4,7 @@
   <meta charset="UTF-8">
   <title>Solo para ti</title>
   <style>
-    body  <div class="postits">
-
-  <div class="postit" onclick="abrirNota('triste')">
-  léeme cuando estés triste
-  </div>
-
-  <div class="postit" onclick="abrirNota('feliz')">
-  léeme cuando estés feliz
-  </div>
-
-  <div class="postit" onclick="abrirNota('enojada')">
-  léeme cuando estés enojada
-  </div>
-
-</div>
+    body
     {
       .title {
   font-size: 32px;
@@ -94,10 +80,29 @@
       font-size: 18px;
       line-height: 1.6;
     }
+
+    
   </style>
 </head>
 
 <body>
+<div class="postits">
+
+  <div class="postit" onclick="abrirNota('triste')">
+  léeme cuando estés triste
+  </div>
+
+  <div class="postit" onclick="abrirNota('feliz')">
+  léeme cuando estés feliz
+  </div>
+
+  <div class="postit" onclick="abrirNota('enojada')">
+  léeme cuando estés enojada
+  </div>
+
+</div>
+
+
 
 <div class="box" id="lock">
   <h1 class="title">Nuestro Lugar Secreto</h1>
@@ -108,6 +113,32 @@
   <br>
   <button onclick="unlock()">Entrar</button>
 </div>
+.postits{
+  position: fixed;
+  left: 0;
+  top: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.postit{
+  background: #ffd86b;
+  color: #333;
+  padding: 12px 18px;
+  width: 160px;
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+  transform: translateX(-120px);
+  transition: transform 0.4s;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.3);
+}
+
+.postit:hover{
+  transform: translateX(0);
+}
+
 
 <div class="box hidden" id="content">
   <div class="message">
