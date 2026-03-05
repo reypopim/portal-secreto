@@ -253,7 +253,7 @@ RECUERDA
 
 <!-- NOTA CENTRAL -->
 
-<div id="notaCentral" class="nota hidden" onclick="cerrarNota()">
+<div id="notaCentral" class="nota" style="display:none;" onclick="cerrarNota()">
 
 <div class="notaContenido" onclick="event.stopPropagation()">
 
@@ -305,12 +305,13 @@ texto="amor"
 }
 
 document.getElementById("textoNota").innerText=texto
-document.getElementById("notaCentral").classList.remove("hidden")
+document.getElementById("notaCentral").style.display = "flex"
 
 }
 
 function cerrarNota(){
-document.getElementById("notaCentral").classList.add("hidden")
+document.getElementById("notaCentral").style.display = "none"
+}
 }
 
 </script>
