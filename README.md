@@ -4,7 +4,22 @@
   <meta charset="UTF-8">
   <title>Solo para ti</title>
   <style>
-    body {
+    body  <div class="postits">
+
+  <div class="postit" onclick="abrirNota('triste')">
+  léeme cuando estés triste
+  </div>
+
+  <div class="postit" onclick="abrirNota('feliz')">
+  léeme cuando estés feliz
+  </div>
+
+  <div class="postit" onclick="abrirNota('enojada')">
+  léeme cuando estés enojada
+  </div>
+
+</div>
+    {
       .title {
   font-size: 32px;
   margin-bottom: 5px;
