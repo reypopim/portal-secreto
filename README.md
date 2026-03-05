@@ -259,8 +259,6 @@ RECUERDA
 
 <p id="textoNota">amor</p>
 
-<button onclick="cerrarNota()">cerrar</button>
-
 </div>
 
 </div>
