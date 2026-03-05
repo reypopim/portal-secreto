@@ -253,9 +253,9 @@ RECUERDA
 
 <!-- NOTA CENTRAL -->
 
-<div id="notaCentral" class="nota hidden">
+<div id="notaCentral" class="nota hidden" onclick="cerrarNota()">
 
-<div class="notaContenido">
+<div class="notaContenido" onclick="event.stopPropagation()">
 
 <p id="textoNota">amor</p>
 
