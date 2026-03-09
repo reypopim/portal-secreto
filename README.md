@@ -11,18 +11,13 @@
 
 body{
 margin:0;
-height:100vh;
-background:linear-gradient(135deg,#2b0f1a,#3a1c2e,#1c0f18);
+background: linear-gradient(135deg,#2b0f1a,#3a1c2e,#1c0f18);
 color:#f5f5f5;
 font-family:Georgia,serif;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-overflow:hidden;
+overflow-x:hidden;
 }
 
-/* ESTRELLAS */
+/* ===== ESTRELLAS ===== */
 
 body::before{
 content:"";
@@ -32,13 +27,20 @@ height:100%;
 background-image:
 radial-gradient(2px 2px at 20% 30%,#fff,transparent),
 radial-gradient(2px 2px at 70% 80%,#fff,transparent),
-radial-gradient(1px 1px at 40% 60%,#fff,transparent),
-radial-gradient(2px 2px at 90% 20%,#fff,transparent);
+radial-gradient(1px 1px at 40% 60%,#fff,transparent);
 opacity:0.25;
 pointer-events:none;
 }
 
-/* ===== CAJAS ===== */
+/* ===== PORTADA ===== */
+
+.portada{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
 
 .box{
 max-width:600px;
@@ -48,73 +50,96 @@ background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.1);
 }
 
-.hidden{
-display:none;
-}
-
-/* TITULO */
-
 .title{
 font-size:34px;
+margin-bottom:5px;
 }
 
 .subtitle{
+font-style:italic;
+margin-bottom:30px;
 color:#d7c6c6;
-margin-bottom:20px;
 }
 
-/* CONTADOR */
+/* ===== INPUT ===== */
 
-.contador{
-font-size:14px;
-margin-bottom:25px;
-color:#e5d6c8;
-}
-
-/* INPUTS */
-
-.codeInputs{
-display:flex;
-gap:10px;
-justify-content:center;
-}
-
-.codeInputs input{
-width:50px;
-height:50px;
-font-size:24px;
+input{
+padding:10px;
+font-size:18px;
+width:120px;
 text-align:center;
-border-radius:6px;
-border:none;
-background:#f5e6c8;
+background:#f3e6d0;
 color:#333;
+border:1px solid #aaa;
+border-radius:6px;
 }
-
-/* BOTON */
 
 button{
-margin-top:20px;
+margin-top:15px;
 padding:10px 20px;
 font-size:16px;
-background:#f5e6c8;
+background:#f3e6d0;
 color:#333;
-border:none;
+border:1px solid #aaa;
 border-radius:6px;
 cursor:pointer;
 }
 
-button:hover{
-background:#e8d7b2;
+/* ===== PAGINA 2 ===== */
+
+.pagina2{
+display:none;
+padding-top:80px;
+min-height:200vh;
+text-align:center;
 }
 
-/* MENSAJE */
+/* ===== CONTADOR ===== */
+
+.contador{
+font-size:20px;
+margin-bottom:40px;
+}
+
+/* ===== MENSAJE ===== */
 
 .message{
 white-space:pre-line;
 line-height:1.7;
+margin:50px auto;
+max-width:600px;
 }
 
-/* POST ITS LATERALES */
+/* ===== GALERIA ===== */
+
+.galeria{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin:80px 0;
+}
+
+.galeria img{
+width:200px;
+border-radius:10px;
+}
+
+/* ===== CARTAS ===== */
+
+.cartas{
+max-width:700px;
+margin:auto;
+}
+
+.carta{
+background:#fff3;
+padding:25px;
+margin:20px;
+border-radius:10px;
+}
+
+/* ===== POSTITS ===== */
 
 .postits{
 position:fixed;
@@ -130,9 +155,10 @@ background:#ffe97a;
 color:#333;
 padding:12px 18px;
 width:170px;
+font-family:'Courier New';
 cursor:pointer;
 transform:translateX(-130px);
-transition:0.4s;
+transition:transform 0.4s;
 border-radius:0 8px 8px 0;
 }
 
@@ -140,7 +166,7 @@ border-radius:0 8px 8px 0;
 transform:translateX(0);
 }
 
-/* NOTA CENTRAL */
+/* ===== NOTA ===== */
 
 .nota{
 position:fixed;
@@ -150,104 +176,119 @@ width:100%;
 height:100%;
 background:rgba(0,0,0,0.6);
 display:none;
-justify-content:center;
 align-items:center;
-backdrop-filter:blur(6px);
+justify-content:center;
 }
 
 .notaContenido{
 background:#ffe97a;
 padding:40px;
-width:300px;
 border-radius:10px;
 color:#333;
+max-width:320px;
 }
 
 </style>
 </head>
 
-
 <body>
 
-<!-- POSTITS LATERALES (OCULTOS AL INICIO) -->
 
-<div class="postits hidden" id="postits">
+<!-- PORTADA -->
 
-<div class="postit" onclick="abrirNota('triste')">léeme cuando estés triste</div>
-<div class="postit" onclick="abrirNota('feliz')">léeme cuando estés feliz</div>
-<div class="postit" onclick="abrirNota('enojada')">léeme cuando estés enojada</div>
+<div class="portada" id="pagina1">
 
-</div>
-
-
-<!-- PANTALLA BLOQUEO -->
-
-<div class="box" id="lock">
+<div class="box">
 
 <h1 class="title">Nuestro lugar secreto</h1>
+
 <p class="subtitle">Algunas fechas no se olvidan</p>
 
-<div class="contador" id="contador"></div>
+<p>Ingresa el número correcto</p>
 
-<p>Ingresa el código</p>
+<input type="number" id="code">
 
-<div class="codeInputs">
-<input id="c1" maxlength="1">
-<input id="c2" maxlength="1">
-<input id="c3" maxlength="1">
-<input id="c4" maxlength="1">
-</div>
+<br>
 
 <button onclick="unlock()">Entrar</button>
 
 </div>
 
+</div>
 
-<!-- CONTENIDO -->
 
-<div class="box hidden" id="content">
+<!-- PAGINA 2 -->
+
+<div class="pagina2" id="pagina2">
+
+
+<div class="contador" id="contador"></div>
+
+
+<!-- MENSAJE CIFRADO -->
 
 <div class="message">
 
 RECUERDA  
 19 5 3 22 5 19 4 1  
-9 4 5 5 14 5 19 16  
 
-3 22 1 14 4 16  
-21 16 4 16  
-3 16 13 5 14 27 16  
+</div>
 
-5 20 21 5  
-12 22 7 1 19  
-7 22 1 19 4 1  
 
-13 9 20  
-3 1 19 21 1 20  
-13 9 20  
-17 19 16 13 5 20 1 20  
+<!-- GALERIA -->
 
-26  
-13 9  
-6 22 21 22 19 16  
-3 16 14 21 9 7 16  
+<div class="galeria">
 
-21 5  
-1 13 16
+<img src="https://picsum.photos/300/200">
+<img src="https://picsum.photos/301/200">
+<img src="https://picsum.photos/302/200">
 
+</div>
+
+
+<!-- CARTAS -->
+
+<div class="cartas">
+
+<div class="carta">
+Aquí podrás escribir una carta.
+</div>
+
+<div class="carta">
+Otra carta editable.
 </div>
 
 </div>
 
 
-<!-- POSTIT CENTRAL -->
+<!-- POSTITS LATERALES -->
 
-<div id="notaCentral" class="nota" onclick="cerrarNota()">
+<div class="postits">
+
+<div class="postit" onclick="abrirNota('triste')">
+léeme cuando estés triste
+</div>
+
+<div class="postit" onclick="abrirNota('feliz')">
+léeme cuando estés feliz
+</div>
+
+<div class="postit" onclick="abrirNota('enojada')">
+léeme cuando estés enojada
+</div>
+
+</div>
+
+</div>
+
+
+<!-- NOTA -->
+
+<div class="nota" id="notaCentral" onclick="cerrarNota()">
 
 <div class="notaContenido" onclick="event.stopPropagation()">
 
-<p id="textoNota">
-Aquí puedes escribir tu mensaje inicial.
-</p>
+<p id="textoNota">amor</p>
 
 </div>
 
@@ -256,68 +297,52 @@ Aquí puedes escribir tu mensaje inicial.
 
 <script>
 
-/* CONTADOR DE DIAS */
-
-const fechaInicio = new Date("2025-08-18")
-const hoy = new Date()
-
-const diferencia = hoy - fechaInicio
-const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24))
-
-document.getElementById("contador").innerText =
-"Llevamos " + dias + " días caminando juntos."
-
-
 /* DESBLOQUEO */
 
 function unlock(){
 
-let code =
-document.getElementById("c1").value +
-document.getElementById("c2").value +
-document.getElementById("c3").value +
-document.getElementById("c4").value
+let value=document.getElementById("code").value
 
-if(code === "0615"){
+if(value==="15"){
 
-document.getElementById("lock").classList.add("hidden")
-document.getElementById("content").classList.remove("hidden")
-
-document.getElementById("postits").classList.remove("hidden")
-
-abrirNota("inicio")
-
-}else{
-
-alert("No es ese el codigo amor.")
+document.getElementById("pagina1").style.display="none"
+document.getElementById("pagina2").style.display="block"
 
 }
 
 }
+
+
+/* CONTADOR DIAS */
+
+let inicio=new Date("2025-08-18")
+let hoy=new Date()
+
+let dias=Math.floor((hoy-inicio)/(1000*60*60*24))
+
+document.getElementById("contador").innerText=
+"Días juntos: "+dias
+
 
 /* POSTITS */
 
 function abrirNota(tipo){
 
-let texto="amor"
-
-if(tipo==="inicio"){
-texto="Aquí puedes poner la primera carta o mensaje que quieras que lea."
-}
+let texto=""
 
 if(tipo==="triste"){
-texto="amor"
+texto="Todo estará bien."
 }
 
 if(tipo==="feliz"){
-texto="amor"
+texto="Me encanta verte feliz."
 }
 
 if(tipo==="enojada"){
-texto="amor"
+texto="Respira. Estoy contigo."
 }
 
-document.getElementById("textoNota").innerText = texto
+document.getElementById("textoNota").innerText=texto
 document.getElementById("notaCentral").style.display="flex"
 
 }
