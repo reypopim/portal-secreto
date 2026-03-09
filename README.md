@@ -60,15 +60,7 @@ font-size:34px;
 
 .subtitle{
 color:#d7c6c6;
-margin-bottom:20px;
-}
-
-/* CONTADOR */
-
-.contador{
-font-size:14px;
-margin-bottom:25px;
-color:#e5d6c8;
+margin-bottom:30px;
 }
 
 /* INPUTS */
@@ -86,25 +78,6 @@ font-size:24px;
 text-align:center;
 border-radius:6px;
 border:none;
-background:#f5e6c8;
-color:#333;
-}
-
-/* BOTON */
-
-button{
-margin-top:20px;
-padding:10px 20px;
-font-size:16px;
-background:#f5e6c8;
-color:#333;
-border:none;
-border-radius:6px;
-cursor:pointer;
-}
-
-button:hover{
-background:#e8d7b2;
 }
 
 /* MENSAJE */
@@ -169,9 +142,9 @@ color:#333;
 
 <body>
 
-<!-- POSTITS LATERALES (OCULTOS AL INICIO) -->
+<!-- POSTITS -->
 
-<div class="postits hidden" id="postits">
+<div class="postits">
 
 <div class="postit" onclick="abrirNota('triste')">léeme cuando estés triste</div>
 <div class="postit" onclick="abrirNota('feliz')">léeme cuando estés feliz</div>
@@ -187,8 +160,6 @@ color:#333;
 <h1 class="title">Nuestro lugar secreto</h1>
 <p class="subtitle">Algunas fechas no se olvidan</p>
 
-<div class="contador" id="contador"></div>
-
 <p>Ingresa el código</p>
 
 <div class="codeInputs">
@@ -197,6 +168,8 @@ color:#333;
 <input id="c3" maxlength="1">
 <input id="c4" maxlength="1">
 </div>
+
+<br>
 
 <button onclick="unlock()">Entrar</button>
 
@@ -256,18 +229,6 @@ Aquí puedes escribir tu mensaje inicial.
 
 <script>
 
-/* CONTADOR DE DIAS */
-
-const fechaInicio = new Date("2025-08-18")
-const hoy = new Date()
-
-const diferencia = hoy - fechaInicio
-const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24))
-
-document.getElementById("contador").innerText =
-"Llevamos " + dias + " días caminando juntos."
-
-
 /* DESBLOQUEO */
 
 function unlock(){
@@ -282,8 +243,6 @@ if(code === "0615"){
 
 document.getElementById("lock").classList.add("hidden")
 document.getElementById("content").classList.remove("hidden")
-
-document.getElementById("postits").classList.remove("hidden")
 
 abrirNota("inicio")
 
