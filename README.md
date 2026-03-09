@@ -7,12 +7,12 @@
 
 <style>
 
-/* ===== FONDO GENERAL ===== */
+/* ===== FONDO ===== */
 
 body{
 margin:0;
 height:100vh;
-background: linear-gradient(135deg,#2b0f1a,#3a1c2e,#1c0f18);
+background:linear-gradient(135deg,#2b0f1a,#3a1c2e,#1c0f18);
 color:#f5f5f5;
 font-family:Georgia,serif;
 display:flex;
@@ -22,7 +22,7 @@ text-align:center;
 overflow:hidden;
 }
 
-/* ===== ESTRELLAS ===== */
+/* ESTRELLAS */
 
 body::before{
 content:"";
@@ -33,13 +33,12 @@ background-image:
 radial-gradient(2px 2px at 20% 30%,#fff,transparent),
 radial-gradient(2px 2px at 70% 80%,#fff,transparent),
 radial-gradient(1px 1px at 40% 60%,#fff,transparent),
-radial-gradient(2px 2px at 90% 20%,#fff,transparent),
-radial-gradient(1px 1px at 10% 90%,#fff,transparent);
+radial-gradient(2px 2px at 90% 20%,#fff,transparent);
 opacity:0.25;
 pointer-events:none;
 }
 
-/* ===== CAJA CENTRAL ===== */
+/* ===== CAJAS ===== */
 
 .box{
 max-width:600px;
@@ -47,78 +46,48 @@ padding:40px;
 border-radius:12px;
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.1);
-animation:aparecer 1.5s ease;
-}
-
-/* ===== ANIMACIÓN ===== */
-
-@keyframes aparecer{
-from{
-opacity:0;
-transform:translateY(20px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* ===== TITULO ===== */
-
-.title{
-font-size:34px;
-letter-spacing:2px;
-margin-bottom:5px;
-}
-
-.subtitle{
-font-size:16px;
-color:#d7c6c6;
-margin-bottom:30px;
-font-style:italic;
-}
-
-/* ===== INPUT ===== */
-
-input{
-padding:10px;
-font-size:18px;
-width:120px;
-text-align:center;
-background:#1c1c1c;
-color:white;
-border:1px solid #666;
-border-radius:6px;
-}
-
-button{
-margin-top:15px;
-padding:10px 20px;
-font-size:16px;
-background:#2a2a2a;
-color:white;
-border:1px solid #777;
-border-radius:6px;
-cursor:pointer;
-}
-
-button:hover{
-background:#444;
 }
 
 .hidden{
 display:none;
 }
 
-/* ===== MENSAJE CIFRADO ===== */
+/* TITULO */
+
+.title{
+font-size:34px;
+}
+
+.subtitle{
+color:#d7c6c6;
+margin-bottom:30px;
+}
+
+/* INPUTS */
+
+.codeInputs{
+display:flex;
+gap:10px;
+justify-content:center;
+}
+
+.codeInputs input{
+width:50px;
+height:50px;
+font-size:24px;
+text-align:center;
+border-radius:6px;
+border:none;
+}
+
+/* MENSAJE */
 
 .message{
 white-space:pre-line;
-font-size:18px;
 line-height:1.7;
 }
 
-/* ===== POST IT LATERALES ===== */
+/* POST ITS LATERALES */
 
 .postits{
 position:fixed;
@@ -127,7 +96,6 @@ top:30%;
 display:flex;
 flex-direction:column;
 gap:15px;
-z-index:2;
 }
 
 .postit{
@@ -135,19 +103,17 @@ background:#ffe97a;
 color:#333;
 padding:12px 18px;
 width:170px;
-font-family:'Courier New',monospace;
 cursor:pointer;
 transform:translateX(-130px);
-transition:transform 0.4s;
+transition:0.4s;
 border-radius:0 8px 8px 0;
-box-shadow:2px 4px 10px rgba(0,0,0,0.3);
 }
 
 .postit:hover{
 transform:translateX(0);
 }
 
-/* ===== NOTA CENTRAL ===== */
+/* NOTA CENTRAL */
 
 .nota{
 position:fixed;
@@ -156,20 +122,18 @@ left:0;
 width:100%;
 height:100%;
 background:rgba(0,0,0,0.6);
-display:flex;
+display:none;
 justify-content:center;
 align-items:center;
-z-index:5;
+backdrop-filter:blur(6px);
 }
 
 .notaContenido{
 background:#ffe97a;
 padding:40px;
-width:320px;
+width:300px;
 border-radius:10px;
-font-family:'Courier New',monospace;
 color:#333;
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
 </style>
@@ -178,35 +142,32 @@ box-shadow:0 10px 30px rgba(0,0,0,0.5);
 
 <body>
 
-<!-- POST ITS -->
+<!-- POSTITS -->
 
 <div class="postits">
 
-<div class="postit" onclick="abrirNota('triste')">
-léeme cuando estés triste
-</div>
-
-<div class="postit" onclick="abrirNota('feliz')">
-léeme cuando estés feliz
-</div>
-
-<div class="postit" onclick="abrirNota('enojada')">
-léeme cuando estés enojada
-</div>
+<div class="postit" onclick="abrirNota('triste')">léeme cuando estés triste</div>
+<div class="postit" onclick="abrirNota('feliz')">léeme cuando estés feliz</div>
+<div class="postit" onclick="abrirNota('enojada')">léeme cuando estés enojada</div>
 
 </div>
 
 
-<!-- BLOQUEO -->
+<!-- PANTALLA BLOQUEO -->
 
 <div class="box" id="lock">
 
 <h1 class="title">Nuestro lugar secreto</h1>
 <p class="subtitle">Algunas fechas no se olvidan</p>
 
-<p>Ingresa el número correcto</p>
+<p>Ingresa el código</p>
 
-<input type="number" id="code">
+<div class="codeInputs">
+<input id="c1" maxlength="1">
+<input id="c2" maxlength="1">
+<input id="c3" maxlength="1">
+<input id="c4" maxlength="1">
+</div>
 
 <br>
 
@@ -251,13 +212,15 @@ RECUERDA
 </div>
 
 
-<!-- NOTA CENTRAL -->
+<!-- POSTIT CENTRAL -->
 
-<div id="notaCentral" class="nota" style="display:none;" onclick="cerrarNota()">
+<div id="notaCentral" class="nota" onclick="cerrarNota()">
 
 <div class="notaContenido" onclick="event.stopPropagation()">
 
-<p id="textoNota">amor</p>
+<p id="textoNota">
+Aquí puedes escribir tu mensaje inicial.
+</p>
 
 </div>
 
@@ -270,27 +233,36 @@ RECUERDA
 
 function unlock(){
 
-const value=document.getElementById("code").value
+let code =
+document.getElementById("c1").value +
+document.getElementById("c2").value +
+document.getElementById("c3").value +
+document.getElementById("c4").value
 
-if(value==="15"){
+if(code === "0615"){
 
 document.getElementById("lock").classList.add("hidden")
 document.getElementById("content").classList.remove("hidden")
 
+abrirNota("inicio")
+
 }else{
 
-alert("No es ese número")
+alert("No es ese el codigo amor.")
 
 }
 
 }
 
-
-/* POST IT */
+/* POSTITS */
 
 function abrirNota(tipo){
 
 let texto="amor"
+
+if(tipo==="inicio"){
+texto="Aquí puedes poner la primera carta o mensaje que quieras que lea."
+}
 
 if(tipo==="triste"){
 texto="amor"
@@ -304,14 +276,13 @@ if(tipo==="enojada"){
 texto="amor"
 }
 
-document.getElementById("textoNota").innerText=texto
-document.getElementById("notaCentral").style.display = "flex"
+document.getElementById("textoNota").innerText = texto
+document.getElementById("notaCentral").style.display="flex"
 
 }
 
 function cerrarNota(){
-document.getElementById("notaCentral").style.display = "none"
-}
+document.getElementById("notaCentral").style.display="none"
 }
 
 </script>
