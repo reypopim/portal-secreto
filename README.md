@@ -155,11 +155,30 @@ margin-top:40px;
 }
 
 .postit{
-width:90px;
-height:90px;
+width:110px;
+height:110px;
 background:#f0dfc5;
-transform:rotate(-5deg);
+box-shadow:3px 5px 10px rgba(0,0,0,0.3);
 cursor:pointer;
+transition:0.3s;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+font-family:"Courier New", monospace;
+color:black;
+}
+
+.postit-number{
+font-size:28px;
+font-weight:bold;
+}
+
+.postit-day{
+font-size:14px;
+margin-top:4px;
+letter-spacing:1px;
 }
 
 /* modal */
@@ -270,13 +289,40 @@ solo se transforman en memorias eternas.
 
 <div class="postits">
 
-<div class="postit" onclick="openPost(1)"></div>
-<div class="postit" onclick="openPost(2)"></div>
-<div class="postit" onclick="openPost(3)"></div>
-<div class="postit" onclick="openPost(4)"></div>
-<div class="postit" onclick="openPost(5)"></div>
-<div class="postit" onclick="openPost(6)"></div>
-<div class="postit" onclick="openPost(7)"></div>
+<div class="postit" onclick="openPost(1)">
+<div class="postit-number">1</div>
+<div class="postit-day">Día</div>
+</div>
+
+<div class="postit" onclick="openPost(2)">
+<div class="postit-number">2</div>
+<div class="postit-day">Día</div>
+</div>
+
+<div class="postit" onclick="openPost(3)">
+<div class="postit-number">3</div>
+<div class="postit-day">Día</div>
+</div>
+
+<div class="postit" onclick="openPost(4)">
+<div class="postit-number">4</div>
+<div class="postit-day">Día</div>
+</div>
+
+<div class="postit" onclick="openPost(5)">
+<div class="postit-number">5</div>
+<div class="postit-day">Día</div>
+</div>
+
+<div class="postit" onclick="openPost(6)">
+<div class="postit-number">6</div>
+<div class="postit-day">Día</div>
+</div>
+
+<div class="postit" onclick="openPost(7)">
+<div class="postit-number">7</div>
+<div class="postit-day">Día</div>
+</div>
 
 </div>
 
