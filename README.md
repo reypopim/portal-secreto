@@ -236,6 +236,8 @@ margin-top:40px;
 Este lugar existe porque nuestras historias se cruzaron,
 porque el tiempo decidió detenerse en ciertos momentos,
 y porque cada recuerdo contigo merece ser guardado.
+Cada dia se irá actualizando, a medida que pueda hacerlo. 
+Te amo.
 </p>
 
 <div class="section">
@@ -377,13 +379,13 @@ setInterval(updateCounter,1000)
 /* post it */
 
 const textos=[
-"Cada pequeño momento contigo vale más que mil recuerdos.",
-"Este post-it guarda un pensamiento secreto.",
-"Hay historias que solo nosotros conocemos.",
-"Tu sonrisa merece quedarse aquí para siempre.",
-"Los recuerdos contigo son tesoros.",
-"Este lugar guarda lo que siento por ti.",
-"Gracias por existir en mi historia."
+"Estos Post-it tienen mensajes para cada dia de la semana, como podras notar, son 7, y este es el primero: Te amo, y quiero que te sientadas amada los 7 dias de la semana y cada mes que pueda actualizar esta pagina.",
+"bebe? ya te dije que era uno por dia...",
+"si no me haces caso voy a tener que castigarte.",
+"comienzo a creer que mis castigos te gustan mas de lo que pensaba.",
+"Mi amor, ¿porque intentas desobedecerme?, el unico lugar al que te va  allevar esto es al castigo.",
+"mirala.",
+"y me desobedeciste hasta el final, mereces castigo, ataque de besos."
 ]
 
 function openPost(i){
