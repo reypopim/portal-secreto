@@ -118,11 +118,18 @@ gap:20px;
 }
 
 .polaroid{
-width:120px;
-height:140px;
+width:140px;
+height:160px;
 background:white;
-transform:rotate(-5deg);
+padding:10px 10px 30px 10px;
+box-shadow:0 8px 15px rgba(0,0,0,0.3);
+transform:rotate(-6deg);
 position:relative;
+transition:0.4s;
+}
+
+.polaroid:hover{
+transform:scale(1.08) rotate(-2deg);
 }
 
 .polaroid:hover::after{
