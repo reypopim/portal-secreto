@@ -432,9 +432,9 @@ setInterval(updateCounter,1000)
 /* post it */
 
 const textos=[
-"Quería aclararte algo... quizás sea muy brusco... no sé como te lo tomarás, pero esto, es algo especial: "me enamoré de la desnudez de tu alma antes que la desnudez tu cuerpo"",
-"Este es el post-it correspondiente al 2, "toqué y ame tu corazón, antes de sentirte",",
-"Amor, sabía que lo harías, asi que puse el mensaje 3 aqui a proposito, "Te amo infinitamente".",
+"Quería aclararte algo... quizás sea muy brusco... no sé como te lo tomarás, pero esto, es algo especial: me enamoré de la desnudez de tu alma antes que la desnudez tu cuerpo",
+"Este es el post-it correspondiente al 2, toqué y ame tu corazón, antes de sentirte,",
+"Amor, sabía que lo harías, asi que puse el mensaje 3 aqui a proposito, Te amo infinitamente.",
 "ya no hay nada mas que ver por aqui bebe",
 "...",
 "...",
