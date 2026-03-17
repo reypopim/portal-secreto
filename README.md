@@ -262,7 +262,8 @@ margin-top:40px;
 Este lugar existe porque nuestras historias se cruzaron,
 porque el tiempo decidió detenerse en ciertos momentos,
 y porque cada recuerdo contigo merece ser guardado.
-Cada dia se irá actualizando, a medida que pueda hacerlo. 
+la actualizacion de hoy es un tanto... especial.
+un tanto diferente, no sé como te lo tomarás.
 Te amo.
 </p>
 
@@ -272,8 +273,10 @@ Te amo.
 
 <div>
 <p>
-Hay momentos que no se olvidan,  
-solo se transforman en memorias eternas.
+han sido días inexplicables.
+días de gozo y amor
+días, de los cuales quiero volver a vivirlos toditos contigo.
+días que parecen ser más felices, cada día mas, es un paso mas cerca, de una vida juntos.
 </p>
 </div>
 
@@ -330,10 +333,7 @@ solo se transforman en memorias eternas.
 
 <div class="cipher">
 
-16 18 9 14 3 5 19 1  
-5 18 5 19  
-13 9  
-13 21 14 4 16
+1-13-15-18 / 17-21-9-26-1-19 / 20-5 / 4-5 / 22-5-18-7-21-5-14-26-1 / 25 / 3-15-13-15 / 4-9-7-15 / 14-15 / 19-5 / 3-15-13-15 / 20-5 / 12-15 / 22-1-19 / 1 / 20-15-13-1-18 / 25 / 5-19 / 17-21-5 / 3-21-1-14-4-15 / 20-5 / 4-9-10-5 / 17-21-5 / 20-5 / 1-13-1-2-1 / 5-14 / 20-15-4-15 / 19-5-14-20-9-4-15 / 5-19 / 16-15-18-17-21-5 / 3-15-14-19-9-4-5-18-15 / 17-21-5 / 25-1 / 20-5 / 22-9 / 5-14 / 20-15-4-15 / 19-5-14-20-9-4-15 / 20-5 / 1-13-15 / 3-15-13-16-12-5-20-1
 
 </div>
 
@@ -344,7 +344,7 @@ solo se transforman en memorias eternas.
 <div></div>
 
 <div class="binary">
-01010100 01100101 00100000 01100001 01101101 01101111
+Te amo bebe, y siempre lo he hecho, 1 , 2 , y te amo, te amo por tu alma, por tu corazon y mente. 3 , te amo, desde el momento en que conecté con tu corazón.
 </div>
 
 </div>
@@ -432,13 +432,13 @@ setInterval(updateCounter,1000)
 /* post it */
 
 const textos=[
-"Estos Post-it tienen mensajes para cada dia de la semana, como podras notar, son 7, y este es el primero: Te amo, y quiero que te sientadas amada los 7 dias de la semana y cada mes que pueda actualizar esta pagina.",
-"bebe? ya te dije que era uno por dia...",
-"si no me haces caso voy a tener que castigarte.",
-"comienzo a creer que mis castigos te gustan mas de lo que pensaba.",
-"Mi amor, ¿porque intentas desobedecerme?, el unico lugar al que te va  allevar esto es al castigo.",
-"mirala.",
-"y me desobedeciste hasta el final, mereces castigo, ataque de besos."
+"Quería aclararte algo... quizás sea muy brusco... no sé como te lo tomarás, pero esto, es algo especial: "me enamoré de la desnudez de tu alma antes que la desnudez tu cuerpo"",
+"Este es el post-it correspondiente al 2, "toqué y ame tu corazón, antes de sentirte",",
+"Amor, sabía que lo harías, asi que puse el mensaje 3 aqui a proposito, "Te amo infinitamente".",
+"ya no hay nada mas que ver por aqui bebe",
+"...",
+"...",
+"castigada otra vez, ¿alguna vez tendre que cambiar los castigos?"
 ]
 
 function openPost(i){
@@ -452,12 +452,10 @@ function openLetter(){
 document.getElementById("modal").style.display="flex"
 document.getElementById("modalContent").innerHTML=
 `Querida mía,<br><br>
-Si alguna vez encuentras esta carta,
-quiero que recuerdes que cada instante contigo
-ha sido una pequeña eternidad.<br><br>
-Este portal guarda algo simple:
-el deseo de que nuestro tiempo
-siga escribiendo historias.<br><br>
+Hazme saber por el mismo medio que te hizo sentir esta actualizacion.
+estoy muy pendiente de tus emociones y pensamientos, asi que habla mi amor.
+para amarte con todo mi corazón, necesito saber que es lo que te gusta y que no.
+besos, princesa.<br><br>
 — El Rey`
 }
 
