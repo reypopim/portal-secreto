@@ -223,7 +223,7 @@ margin-top:40px;
 }
 
 .polaroid.activa{
-background-image:url("tu-imagen.jpg");
+background-image:url("ola.jpg");
 background-size:cover;
 background-position:center;
 }
