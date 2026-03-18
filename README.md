@@ -222,6 +222,12 @@ font-family:monospace;
 margin-top:40px;
 }
 
+.polaroid.activa{
+background-image:url("tu-imagen.jpg");
+background-size:cover;
+background-position:center;
+}
+
 </style>
 </head>
 
