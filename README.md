@@ -222,12 +222,6 @@ font-family:monospace;
 margin-top:40px;
 }
 
-.polaroid.activa{
-background-image:url("ola.jpg");
-background-size:cover;
-background-position:center;
-}
-
 </style>
 </head>
 
