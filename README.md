@@ -132,7 +132,7 @@ transition:0.4s;
 transform:scale(1.08) rotate(-2deg);
 }
 
-.polaroid:hover::after{
+.polaroid:not(.activa):hover::after{
 content:"Aún en programación";
 position:absolute;
 top:0;
@@ -222,6 +222,12 @@ font-family:monospace;
 margin-top:40px;
 }
 
+.polaroid.activa{
+background-image:url("tu-imagen.jpg");
+background-size:cover;
+background-position:center;
+}
+
 </style>
 </head>
 
@@ -234,7 +240,7 @@ margin-top:40px;
 <div id="page1">
 
 <h1>Nuestro portal secreto</h1>
-<h2>De único acceso para la princesa del Rey</h2>
+<h2>FELIZ CUMPLEAÑOS PRINCESA!!!</h2>
 
 <div class="code-box">
 <input maxlength="1">
@@ -262,9 +268,8 @@ margin-top:40px;
 Este lugar existe porque nuestras historias se cruzaron,
 porque el tiempo decidió detenerse en ciertos momentos,
 y porque cada recuerdo contigo merece ser guardado.
-la actualizacion de hoy es un tanto... especial.
-un tanto diferente, no sé como te lo tomarás.
-Te amo.
+Feliz cumpleaños mi vida!
+Te amooooo!!!!
 </p>
 
 <div class="section">
@@ -273,18 +278,19 @@ Te amo.
 
 <div>
 <p>
-han sido días inexplicables.
-días de gozo y amor
-días, de los cuales quiero volver a vivirlos toditos contigo.
-días que parecen ser más felices, cada día mas, es un paso mas cerca, de una vida juntos.
+Hace 365 dias, eramos amigos, amigos que se tomaban de la mano...
+amigos que actuaban casi como pareja, yo en ese dia, el 18 de marzo del 2025.
+caí en cuenta que me gustaba tu sonrisita y tus cachetitos, unicos y hermosos.
+y me pasaría otros 365 dias mas haciendote feliz, la niña mas feliz del mundo.
 </p>
 </div>
 
 <div class="photos">
+
+<div class="polaroid activa"></div>
+
 <div class="polaroid"></div>
 <div class="polaroid"></div>
-<div class="polaroid"></div>
-</div>
 
 </div>
 
@@ -333,7 +339,9 @@ días que parecen ser más felices, cada día mas, es un paso mas cerca, de una 
 
 <div class="cipher">
 
-1-13-15-18 / 17-21-9-26-1-19 / 20-5 / 4-5 / 22-5-18-7-21-5-14-26-1 / 25 / 3-15-13-15 / 4-9-7-15 / 14-15 / 19-5 / 3-15-13-15 / 20-5 / 12-15 / 22-1-19 / 1 / 20-15-13-1-18 / 25 / 5-19 / 17-21-5 / 3-21-1-14-4-15 / 20-5 / 4-9-10-5 / 17-21-5 / 20-5 / 1-13-1-2-1 / 5-14 / 20-15-4-15 / 19-5-14-20-9-4-15 / 5-19 / 16-15-18-17-21-5 / 3-15-14-19-9-4-5-18-15 / 17-21-5 / 25-1 / 20-5 / 22-9 / 5-14 / 20-15-4-15 / 19-5-14-20-9-4-15 / 20-5 / 1-13-15 / 3-15-13-16-12-5-20-1
+Tampoco quiero hacerte trabajar tanto hoy, es tu dia despues de todo mi bebita mocha.
+solo queria entregarte este mensaje:
+I love you with all my heart, you are a gift from God, a precious pearl, a sea of ​​infinite things to love, like your smile, which I discovered I liked from that day, 365 days ago.
 
 </div>
 
@@ -344,7 +352,9 @@ días que parecen ser más felices, cada día mas, es un paso mas cerca, de una 
 <div></div>
 
 <div class="binary">
-Te amo bebe, y siempre lo he hecho, 1 , 2 , y te amo, te amo por tu alma, por tu corazon y mente. 3 , te amo, desde el momento en que conecté con tu corazón.
+REGLA SUPER MEGA HIPER IMPORTANTE!!!!
+Los post-it tienen un regalo, SOLO PUEDES ABRIR UNO, y es el regalo que te entregaré por tu cumpleaños.
+SOLO UNO AMOR!!! tienes que ser completamente sincera despues al decirme cual te toco!!
 </div>
 
 </div>
@@ -432,13 +442,13 @@ setInterval(updateCounter,1000)
 /* post it */
 
 const textos=[
-"Quería aclararte algo... quizás sea muy brusco... no sé como te lo tomarás, pero esto, es algo especial: me enamoré de la desnudez de tu alma antes que la desnudez tu cuerpo",
-"Este es el post-it correspondiente al 2, toqué y ame tu corazón, antes de sentirte,",
-"Amor, sabía que lo harías, asi que puse el mensaje 3 aqui a proposito, Te amo infinitamente.",
-"ya no hay nada mas que ver por aqui bebe",
-"...",
-"...",
-"castigada otra vez, ¿alguna vez tendre que cambiar los castigos?"
+"Ataque de besos",
+"Ataque de besos",
+"Ataque de besos",
+"4 dia, correspondiente a 4 ataques de besos, muy bien si elejiste esta.",
+"Ataque de besos",
+"Ataque de besos",
+"¿¿LLegaste al post-it donde siempre te castigo!? te castigo con un ataque de besos"
 ]
 
 function openPost(i){
@@ -452,10 +462,10 @@ function openLetter(){
 document.getElementById("modal").style.display="flex"
 document.getElementById("modalContent").innerHTML=
 `Querida mía,<br><br>
-Hazme saber por el mismo medio que te hizo sentir esta actualizacion.
-estoy muy pendiente de tus emociones y pensamientos, asi que habla mi amor.
-para amarte con todo mi corazón, necesito saber que es lo que te gusta y que no.
-besos, princesa.<br><br>
+Sé que eres un poquito tramposa, y que no te va a importar la regla en mayusculas que te puse.
+Te amo mi amor, mucho mucho.
+espero que te guste el regalito que elijiste.
+<br><br>
 — El Rey`
 }
 
