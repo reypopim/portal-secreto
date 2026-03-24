@@ -228,6 +228,14 @@ background-size:cover;
 background-position:center;
 }
 
+.polaroid.activa::after{
+content:"";
+display:block;
+width:100%;
+height:100%;
+box-shadow:inset 0 0 20px rgba(0,0,0,0.2);
+}
+
 </style>
 </head>
 
