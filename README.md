@@ -118,14 +118,18 @@ gap:20px;
 }
 
 .polaroid{
-width:140px;
-height:160px;
+width:160px;
+height:180px;
 background:white;
-padding:10px 10px 30px 10px;
+padding:10px 10px 40px 10px; /* borde inferior más grande */
 box-shadow:0 8px 15px rgba(0,0,0,0.3);
 transform:rotate(-6deg);
 position:relative;
 transition:0.4s;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
 }
 
 .polaroid:hover{
@@ -223,9 +227,22 @@ margin-top:40px;
 }
 
 .polaroid.activa{
+position:relative;
+}
+
+.polaroid.activa::before{
+content:"";
+position:absolute;
+top:10px;
+left:10px;
+right:10px;
+bottom:40px; /* respeta el borde blanco inferior */
 background-image:url("ola.jpg");
 background-size:cover;
 background-position:center;
+
+opacity:0;
+animation:revelado 4s ease forwards;
 }
 
 .polaroid.activa::after{
@@ -234,6 +251,21 @@ display:block;
 width:100%;
 height:100%;
 box-shadow:inset 0 0 80px rgba(0,0,0,0.6);
+}
+
+@keyframes revelado{
+0%{
+opacity:0;
+filter:blur(10px) brightness(0.5);
+}
+50%{
+opacity:0.6;
+filter:blur(4px) brightness(0.8);
+}
+100%{
+opacity:1;
+filter:blur(0px) brightness(1);
+}
 }
 
 </style>
