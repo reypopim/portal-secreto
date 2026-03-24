@@ -294,6 +294,8 @@ y me pasaría otros 365 dias mas haciendote feliz, la niña mas feliz del mundo.
 
 </div>
 
+</div>
+
 <!-- post it -->
 
 <div class="postits">
