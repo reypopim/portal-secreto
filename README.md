@@ -233,7 +233,7 @@ content:"";
 display:block;
 width:100%;
 height:100%;
-box-shadow:inset 0 0 20px rgba(0,0,0,0.2);
+box-shadow:inset 0 0 40px rgba(0,0,0,0.3);
 }
 
 </style>
@@ -406,7 +406,7 @@ let code=""
 inputs.forEach(x=>code+=x.value)
 
 if(code.length==4){
-if(code==="0615"){
+if(code==="0715"){
 document.getElementById("page1").style.display="none"
 document.getElementById("page2").style.display="block"
 }
