@@ -233,7 +233,7 @@ content:"";
 display:block;
 width:100%;
 height:100%;
-box-shadow:inset 0 0 40px rgba(0,0,0,0.3);
+box-shadow:inset 0 0 80px rgba(0,0,0,0.6);
 }
 
 </style>
