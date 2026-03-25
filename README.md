@@ -280,7 +280,7 @@ filter:blur(0px) brightness(1);
 <div id="page1">
 
 <h1>Nuestro portal secreto</h1>
-<h2>FELIZ CUMPLEAÑOS PRINCESA!!!</h2>
+<h2>¿Como está hoy mi nubesita hermosa?</h2>
 
 <div class="code-box">
 <input maxlength="1">
@@ -308,8 +308,8 @@ filter:blur(0px) brightness(1);
 Este lugar existe porque nuestras historias se cruzaron,
 porque el tiempo decidió detenerse en ciertos momentos,
 y porque cada recuerdo contigo merece ser guardado.
-Feliz cumpleaños mi vida!
-Te amooooo!!!!
+MI AMOORRR, Quería demostrarte mis enormes cantidades de amor.
+Gracias a Dios tenemos esta pagina para demostrarte todo todito
 </p>
 
 <div class="section">
@@ -318,10 +318,15 @@ Te amooooo!!!!
 
 <div>
 <p>
-Hace 365 dias, eramos amigos, amigos que se tomaban de la mano...
-amigos que actuaban casi como pareja, yo en ese dia, el 18 de marzo del 2025.
-caí en cuenta que me gustaba tu sonrisita y tus cachetitos, unicos y hermosos.
-y me pasaría otros 365 dias mas haciendote feliz, la niña mas feliz del mundo.
+Te amo
+y me imagino que ya lo sabes, pero te dije que te lo recordaría.
+todos los días de tu vida.
+Ese dia amor, sinceramente pensaba que no tenía necesidad de recordartelo.
+pero entendí, que mi deber como novio, es cuidar tu corazoncito
+de cada duda tonta, de cada miedo, y expresarte mis emociones y lo que siento por ti.
+tambien era mi deber como amigo, decirte, que eras la unica con quien yo hacia eso.
+pues no quiero que nunca pases por inseguridades, jamás.
+Te amo!!!
 </p>
 </div>
 
@@ -381,10 +386,12 @@ y me pasaría otros 365 dias mas haciendote feliz, la niña mas feliz del mundo.
 
 <div class="cipher">
 
-Tampoco quiero hacerte trabajar tanto hoy, es tu dia despues de todo mi bebita mocha.
-solo queria entregarte este mensaje:
-I love you with all my heart, you are a gift from God, a precious pearl, a sea of ​​infinite things to love, like your smile, which I discovered I liked from that day, 365 days ago.
-
+Este dia estoy algo ocupado, pero aun así siemre va a haber TIEMPO (3) para ti mi niña mocha
+Piensa que, cuando vivamos juntos, lo que nos va a sobrar va a ser caricias y mmimos.
+asi que si hoy ME (1) extrañas, piensa en lo muy cerca que esta ese futuro juntos.
+me emociona ese futuro CONTIGO (4)
+me FALTA (2) tiempo y palabras para expresarte mi amor.
+Te amo
 </div>
 
 <div class="section">
@@ -394,9 +401,7 @@ I love you with all my heart, you are a gift from God, a precious pearl, a sea o
 <div></div>
 
 <div class="binary">
-REGLA SUPER MEGA HIPER IMPORTANTE!!!!
-Los post-it tienen un regalo, SOLO PUEDES ABRIR UNO, y es el regalo que te entregaré por tu cumpleaños.
-SOLO UNO AMOR!!! tienes que ser completamente sincera despues al decirme cual te toco!!
+01110100 01100101 00100000 01100001 01101101 01101111 00100000 00110000 00111000
 </div>
 
 </div>
@@ -484,13 +489,13 @@ setInterval(updateCounter,1000)
 /* post it */
 
 const textos=[
-"Ataque de besos",
-"Ataque de besos",
-"Ataque de besos",
-"4 dia, correspondiente a 4 ataques de besos, muy bien si elejiste esta.",
-"Ataque de besos",
-"Ataque de besos",
-"¿¿LLegaste al post-it donde siempre te castigo!? te castigo con un ataque de besos"
+"este post-it no es bebe",
+"amor?",
+"TE AMOOOOO, y quiero que te sientas super amada todos los miercoles de hoy hasta el infinitooo",
+"te pasaste bebe.",
+"amor?",
+"...",
+"quizás llame este post-it como el post-it del castigo..."
 ]
 
 function openPost(i){
@@ -504,9 +509,7 @@ function openLetter(){
 document.getElementById("modal").style.display="flex"
 document.getElementById("modalContent").innerHTML=
 `Querida mía,<br><br>
-Sé que eres un poquito tramposa, y que no te va a importar la regla en mayusculas que te puse.
-Te amo mi amor, mucho mucho.
-espero que te guste el regalito que elijiste.
+pronto esta cartita será de utlidad, planeo algo por aqui...
 <br><br>
 — El Rey`
 }
