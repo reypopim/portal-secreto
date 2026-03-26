@@ -502,6 +502,7 @@ const textos=[
 "MI AMOOOOOOOOOOOOOORRRRRR TE AMO TE AMO TE AMOOOOOOOOO, y si, creo que te debo 2 castigos y muchos ataques de besos, vas a tener que pedirmelos, TE AMO BEBE!!",
 "...",
 "como le gusta indagar, por hoy no te voy a castigar, la proxima actualizacion será mas.... "
+"mas..."
 ]
 
 function openPost(i){
