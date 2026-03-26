@@ -280,7 +280,7 @@ filter:blur(0px) brightness(1);
 <div id="page1">
 
 <h1>Nuestro portal secreto</h1>
-<h2>¿Como está hoy mi nubesita hermosa?</h2>
+<h2>Un vistazo a lo que siento</h2>
 
 <div class="code-box">
 <input maxlength="1">
@@ -308,8 +308,10 @@ filter:blur(0px) brightness(1);
 Este lugar existe porque nuestras historias se cruzaron,
 porque el tiempo decidió detenerse en ciertos momentos,
 y porque cada recuerdo contigo merece ser guardado.
-MI AMOORRR, Quería demostrarte mis enormes cantidades de amor.
-Gracias a Dios tenemos esta pagina para demostrarte todo todito
+BEBEEEE!!!
+Queria decirte, que a veces no paro de pensar en lo feliz 
+que soy a tu lado, que cada momento contigo lo atesoro
+y cada risa la guardo en mi corazón.
 </p>
 
 <div class="section">
@@ -319,14 +321,13 @@ Gracias a Dios tenemos esta pagina para demostrarte todo todito
 <div>
 <p>
 Te amo
-y me imagino que ya lo sabes, pero te dije que te lo recordaría.
-todos los días de tu vida.
-Ese dia amor, sinceramente pensaba que no tenía necesidad de recordartelo.
-pero entendí, que mi deber como novio, es cuidar tu corazoncito
-de cada duda tonta, de cada miedo, y expresarte mis emociones y lo que siento por ti.
-tambien era mi deber como amigo, decirte, que eras la unica con quien yo hacia eso.
-pues no quiero que nunca pases por inseguridades, jamás.
-Te amo!!!
+hoy es un tanto diferente, pues un secreto:
+hoy siento que no es mi dia
+pero no importa, pues creo que es bueno que atesoremos
+los buenos recuerdos, y lo malo dejarlo pasar.
+a veces me cuesta dejar pasar lo malo.
+pero como un día te dije:
+¡El amor contgo siempre va a predominar!
 </p>
 </div>
 
@@ -382,15 +383,21 @@ Te amo!!!
 
 </div>
 
-<h2>Un pequeño mensaje cifrado</h2>
+<h2>Un pequeño mensaje</h2>
 
 <div class="cipher">
 
-Este dia estoy algo ocupado, pero aun así siemre va a haber TIEMPO (3) para ti mi niña mocha
-Piensa que, cuando vivamos juntos, lo que nos va a sobrar va a ser caricias y mmimos.
-asi que si hoy ME (1) extrañas, piensa en lo muy cerca que esta ese futuro juntos.
-me emociona ese futuro CONTIGO (4)
-me FALTA (2) tiempo y palabras para expresarte mi amor.
+Quizás hoy esperes un puzzle, o algo que tenga que ver con 00110000 00111000.
+bueno dejame decirte que lo de hoy es más sentimental, mas descriptivo.
+queda poco para una actualizacion novedosa de esta pagina.
+que deseo incluir de hace un tiempo,
+pero no deseo hablarte de esas cosas. quiero que una vez más, veas todo el amor
+que tengo en ti, que no quiero que haya dia que te sientas desplazada.
+
+No quiero que te sientas de esa manera, asi que hoy quiero recordarte
+que eres mi reina hermosa, sin ti, mi reino se desploma
+tienes un lugar en micorazon, unico, irremplazable.
+nadie en esta tierra nunca va a poder llegar a ese lugar.
 Te amo
 </div>
 
@@ -401,7 +408,7 @@ Te amo
 <div></div>
 
 <div class="binary">
-01110100 01100101 00100000 01100001 01101101 01101111 00100000 00110000 00111000
+- .   .- -- ---   .- -- --- .-. --..--   . ... .--. . .-. ---   --.- ..- .   -. ---   - .   ..-. .- ... - .. -.. .. .   -.. . -.. .. -.-. .- .-.   - .- -. - ---   - .. . -- .--. ---   . -.   .-. . ... --- .-.. ...- . .-.   .--. ..- --.. --.. .-.. . ... .-.-.- 
 </div>
 
 </div>
@@ -489,13 +496,12 @@ setInterval(updateCounter,1000)
 /* post it */
 
 const textos=[
-"este post-it no es bebe",
-"amor?",
-"TE AMOOOOO, y quiero que te sientas super amada todos los miercoles de hoy hasta el infinitooo",
-"te pasaste bebe.",
-"amor?",
+"???",
+"bebe?",
+"este dia ya te hice sentir amada bebe, pasa al siguiente",
+"MI AMOOOOOOOOOOOOOORRRRRR TE AMO TE AMO TE AMOOOOOOOOO, y si, creo que te debo 2 castigos y muchos ataques de besos, vas a tener que pedirmelos, TE AMO BEBE!!",
 "...",
-"quizás llame este post-it como el post-it del castigo..."
+"como le gusta indagar, por hoy no te voy a castigar, la proxima actualizacion será mas.... "
 ]
 
 function openPost(i){
@@ -509,7 +515,9 @@ function openLetter(){
 document.getElementById("modal").style.display="flex"
 document.getElementById("modalContent").innerHTML=
 `Querida mía,<br><br>
-pronto esta cartita será de utlidad, planeo algo por aqui...
+el post-it del dia 7 te dejo a mitad?, un secretito por aqui, no voy a dejar el trabajo incompleto.
+seguramente la proxima actualizacion sea un tanto mas personal.
+más de nosotros.
 <br><br>
 — El Rey`
 }
