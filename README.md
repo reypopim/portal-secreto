@@ -320,7 +320,7 @@ y cada risa la guardo en mi corazón.
 
 <div>
 <p>
-Te amo
+Te amo.
 hoy es un tanto diferente, pues un secreto:
 hoy siento que no es mi dia
 pero no importa, pues creo que es bueno que atesoremos
@@ -501,8 +501,9 @@ const textos=[
 "este dia ya te hice sentir amada bebe, pasa al siguiente",
 "MI AMOOOOOOOOOOOOOORRRRRR TE AMO TE AMO TE AMOOOOOOOOO, y si, creo que te debo 2 castigos y muchos ataques de besos, vas a tener que pedirmelos, TE AMO BEBE!!",
 "...",
-"como le gusta indagar, por hoy no te voy a castigar, la proxima actualizacion será mas.... "
-"mas..."
+"como le gusta indagar, por hoy no te voy a castigar, la proxima actualizacion será mas.... ",
+"mas...",
+
 ]
 
 function openPost(i){
