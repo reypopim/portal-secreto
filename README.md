@@ -102,14 +102,7 @@ display:flex;
 justify-content:space-between;
 margin-top:60px;
 }
-
-/* contador */
-
-#contador{
-font-size:18px;
-line-height:30px;
-}
-
+  
 /* polaroids */
 
 .photos{
@@ -239,7 +232,7 @@ top:10px;
 left:10px;
 right:10px;
 bottom:40px;
-background-image:url("images/foto1.jpg");
+background-image:url("ola.jpg");
 background-size:cover;
 background-position:center;
 opacity:0;
@@ -255,7 +248,7 @@ top:10px;
 left:10px;
 right:10px;
 bottom:40px;
-background-image:url("images/foto2.jpg");
+background-image:url("ola2.jpg");
 background-size:cover;
 background-position:center;
 opacity:0;
@@ -284,12 +277,6 @@ filter:blur(4px) brightness(0.8);
 opacity:1;
 filter:blur(0px) brightness(1);
 }
-}
-
-.polaroid.activa{
-background-image:url("images/foto1.jpg");
-background-size:cover;
-background-position:center;
 }
 
 .timeline-container{
@@ -375,8 +362,8 @@ pero como un día te dije:
 </div>
 
 <div class="photos">
-<div class="polaroid activa foto 1"></div>
-<div class="polaroid activa foto 2"></div>  
+<div class="polaroid activa foto1"></div>
+<div class="polaroid activa foto2"></div>  
 <div class="polaroid"></div>
 
 </div>
@@ -446,8 +433,6 @@ Te amo
   
 <div class="binary">
 - .   .- -- ---   .- -- --- .-. --..--   . ... .--. . .-. ---   --.- ..- .   -. ---   - .   ..-. .- ... - .. -.. .. .   -.. . -.. .. -.-. .- .-.   - .- -. - ---   - .. . -- .--. ---   . -.   .-. . ... --- .-.. ...- . .-.   .--. ..- --.. --.. .-.. . ... .-.-.- 
-</div>
-
 </div>
 
 <div class="timeline-container">
