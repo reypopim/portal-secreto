@@ -286,6 +286,33 @@ filter:blur(0px) brightness(1);
 }
 }
 
+.polaroid.activa{
+background-image:url("images/foto1.jpg");
+background-size:cover;
+background-position:center;
+}
+
+.timeline-container{
+margin-top:40px;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:20px;
+}
+
+#contador{
+font-size:20px;
+text-align:center;
+color:#f5e6d3;
+}
+
+.letter{
+width:140px;
+height:90px;
+background:#f0dfc5;
+cursor:pointer;
+}
+
 </style>
 </head>
 
@@ -333,9 +360,7 @@ y cada risa la guardo en mi corazón.
 </p>
 
 <div class="section">
-
-<div id="contador"></div>
-
+  
 <div>
 <p>
 Te amo.
@@ -418,16 +443,18 @@ Te amo
 </div>
 
 <div class="section">
-
-<div class="letter" onclick="openLetter()"></div>
-
-<div></div>
-
+  
 <div class="binary">
 - .   .- -- ---   .- -- --- .-. --..--   . ... .--. . .-. ---   --.- ..- .   -. ---   - .   ..-. .- ... - .. -.. .. .   -.. . -.. .. -.-. .- .-.   - .- -. - ---   - .. . -- .--. ---   . -.   .-. . ... --- .-.. ...- . .-.   .--. ..- --.. --.. .-.. . ... .-.-.- 
 </div>
 
 </div>
+
+<div class="timeline-container">
+
+<div id="contador"></div>
+
+<div class="letter" onclick="openLetter()"></div>
 
 </div>
 
@@ -500,10 +527,10 @@ const minutes=Math.floor(diff%3600000/60000)
 const seconds=Math.floor(diff%60000/1000)
 
 document.getElementById("contador").innerHTML=
-days+" días<br>"+
-hours+" horas<br>"+
-minutes+" minutos<br>"+
-seconds+" segundos"
+"Llevamos: "+days+" días, "+
+hours+" horas, "+
+minutes+" minutos y "+
+seconds+" segundos ❤️"
 }
 
 setInterval(updateCounter,1000)
