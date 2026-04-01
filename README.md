@@ -300,6 +300,49 @@ background:#f0dfc5;
 cursor:pointer;
 }
 
+.timeline{
+position:relative;
+width:80%;
+max-width:600px;
+height:40px;
+margin-top:10px;
+}
+
+.line{
+position:absolute;
+top:50%;
+left:0;
+right:0;
+height:4px;
+background:#f0dfc5;
+transform:translateY(-50%);
+}
+
+.line::after{
+content:"→";
+position:absolute;
+right:-10px;
+top:-10px;
+color:#f0dfc5;
+font-size:20px;
+}
+
+.dot{
+position:absolute;
+top:50%;
+width:12px;
+height:12px;
+background:#f5e6d3;
+border-radius:50%;
+transform:translate(-50%,-50%);
+}
+
+/* carta grande */
+.letter.big{
+width:220px;
+height:140px;
+}
+
 </style>
 </head>
 
@@ -439,10 +482,15 @@ Te amo
 
 <div id="contador"></div>
 
-<div class="letter" onclick="openLetter()"></div>
-
+<!-- LINEA DE TIEMPO -->
+<div class="timeline">
+<div class="line"></div>
+<div class="dot" id="dot"></div>
 </div>
 
+<div class="letter big" onclick="openLetter()"></div>
+
+</div>
 <!-- MODAL -->
 
 <div class="modal" id="modal" onclick="closeModal(event)">
@@ -519,6 +567,32 @@ seconds+" segundos ❤️"
 }
 
 setInterval(updateCounter,1000)
+
+function updateTimeline(){
+const now = new Date()
+
+// inicio: 18 del mes actual o anterior
+let start = new Date(now.getFullYear(), now.getMonth(), 18)
+
+if(now.getDate() < 18){
+start = new Date(now.getFullYear(), now.getMonth()-1, 18)
+}
+
+// fin: 18 del siguiente mes
+let end = new Date(start.getFullYear(), start.getMonth()+1, 18)
+
+const total = end - start
+const progress = now - start
+
+let percent = (progress / total) * 100
+if(percent < 0) percent = 0
+if(percent > 100) percent = 100
+
+document.getElementById("dot").style.left = percent + "%"
+}
+
+setInterval(updateTimeline,1000)
+updateTimeline()
 
 
 /* post it */
