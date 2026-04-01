@@ -303,44 +303,106 @@ cursor:pointer;
 .timeline{
 position:relative;
 width:80%;
-max-width:600px;
-height:40px;
-margin-top:10px;
+max-width:650px;
+height:60px;
+margin-top:20px;
 }
 
+/* línea principal */
 .line{
 position:absolute;
 top:50%;
 left:0;
 right:0;
-height:4px;
-background:#f0dfc5;
+height:3px;
+background:linear-gradient(to right, #f0dfc5, #ffffff, #f0dfc5);
 transform:translateY(-50%);
+border-radius:5px;
 }
 
+/* punta de flecha elegante */
 .line::after{
-content:"→";
+content:"";
 position:absolute;
-right:-10px;
-top:-10px;
-color:#f0dfc5;
-font-size:20px;
+right:-2px;
+top:50%;
+transform:translateY(-50%) rotate(45deg);
+width:14px;
+height:14px;
+border-top:3px solid #f0dfc5;
+border-right:3px solid #f0dfc5;
 }
 
+/* punto */
 .dot{
 position:absolute;
 top:50%;
-width:12px;
-height:12px;
-background:#f5e6d3;
+width:14px;
+height:14px;
+background:#ffffff;
 border-radius:50%;
 transform:translate(-50%,-50%);
+box-shadow:0 0 10px rgba(255,255,255,0.8);
+animation:pulse 2s infinite;
+}
+
+/* efecto de vida */
+@keyframes pulse{
+0%{ transform:translate(-50%,-50%) scale(1); }
+50%{ transform:translate(-50%,-50%) scale(1.3); }
+100%{ transform:translate(-50%,-50%) scale(1); }
 }
 
 /* carta grande */
 .letter.big{
-width:220px;
-height:140px;
+width:260px;
+height:170px;
+background:linear-gradient(145deg, #f0dfc5, #e6d2b5);
+border-radius:6px;
+position:relative;
+cursor:pointer;
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+/* efecto hover */
+.letter.big:hover{
+transform:scale(1.05);
+}
+
+/* borde tipo papel */
+.letter.big::before{
+content:"";
+position:absolute;
+top:10px;
+left:10px;
+right:10px;
+bottom:10px;
+border:1px solid rgba(0,0,0,0.2);
+border-radius:4px;
+}
+
+/* línea superior tipo carta */
+.letter.big::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+right:0;
+height:40%;
+background:linear-gradient(to bottom, rgba(0,0,0,0.05), transparent);
+border-radius:6px 6px 0 0;
+}
+
+.seal{
+position:absolute;
+bottom:12px;
+right:12px;
+width:22px;
+height:22px;
+background:#8b1e3f;
+border-radius:50%;
+box-shadow:0 0 6px rgba(0,0,0,0.4);
 }
 
 </style>
@@ -490,7 +552,9 @@ Te amo
 <div class="dot" id="dot"></div>
 </div>
 
-<div class="letter big" onclick="openLetter()"></div>
+<div class="letter big" onclick="openLetter()">
+  <div class="seal"></div>
+</div>
 
 </div>
 <!-- MODAL -->
