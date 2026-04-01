@@ -230,19 +230,37 @@ margin-top:40px;
 position:relative;
 }
 
-.polaroid.activa::before{
+/* FOTO 1 */
+
+.polaroid.foto1::before{
 content:"";
 position:absolute;
 top:10px;
 left:10px;
 right:10px;
-bottom:40px; /* respeta el borde blanco inferior */
-background-image:url("ola.jpg");
+bottom:40px;
+background-image:url("images/foto1.jpg");
 background-size:cover;
 background-position:center;
-
 opacity:0;
 animation:revelado 4s ease forwards;
+}
+
+/* FOTO 2 */
+
+.polaroid.foto2::before{
+content:"";
+position:absolute;
+top:10px;
+left:10px;
+right:10px;
+bottom:40px;
+background-image:url("images/foto2.jpg");
+background-size:cover;
+background-position:center;
+opacity:0;
+animation:revelado 4s ease forwards;
+animation-delay:1.5s;
 }
 
 .polaroid.activa::after{
@@ -332,10 +350,8 @@ pero como un día te dije:
 </div>
 
 <div class="photos">
-
-<div class="polaroid activa"></div>
-
-<div class="polaroid"></div>
+<div class="polaroid activa foto 1"></div>
+<div class="polaroid activa foto 2"></div>  
 <div class="polaroid"></div>
 
 </div>
