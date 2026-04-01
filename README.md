@@ -417,7 +417,7 @@ box-shadow:0 0 6px rgba(0,0,0,0.4);
 <div id="page1">
 
 <h1>Nuestro portal secreto</h1>
-<h2>Un vistazo a lo que siento</h2>
+<h2>00110000 00111000</h2>
 
 <div class="code-box">
 <input maxlength="1">
@@ -445,10 +445,11 @@ box-shadow:0 0 6px rgba(0,0,0,0.4);
 Este lugar existe porque nuestras historias se cruzaron,
 porque el tiempo decidió detenerse en ciertos momentos,
 y porque cada recuerdo contigo merece ser guardado.
-BEBEEEE!!!
-Queria decirte, que a veces no paro de pensar en lo feliz 
-que soy a tu lado, que cada momento contigo lo atesoro
-y cada risa la guardo en mi corazón.
+MI AMOOOORRRRRR!!!!!!!!
+Siento mucho gozo al recordar la razón por la cual sostenemos
+esta relación, y es que desde el inicio nos encaminamos
+a casarnos y a vivir una vida juntos.
+por eso la actualización de hoy es: "El futuro"
 </p>
 
 <div class="section">
@@ -456,13 +457,12 @@ y cada risa la guardo en mi corazón.
 <div>
 <p>
 Te amo.
-hoy es un tanto diferente, pues un secreto:
-hoy siento que no es mi dia
-pero no importa, pues creo que es bueno que atesoremos
-los buenos recuerdos, y lo malo dejarlo pasar.
-a veces me cuesta dejar pasar lo malo.
-pero como un día te dije:
-¡El amor contgo siempre va a predominar!
+TE AMO! con todo mi corazón.
+solo espero en Dios que él nos siga ayudando 
+en las adversidades, y que levante una pareja de valor.
+quería refermirme al futuro como algo que no podemos controlar.
+pero por medio de la fe, podemos saber por gracia que tu y yo.
+terminaremos juntos.
 </p>
 </div>
 
@@ -520,24 +520,22 @@ pero como un día te dije:
 
 <div class="cipher">
 
-Quizás hoy esperes un puzzle, o algo que tenga que ver con 00110000 00111000.
-bueno dejame decirte que lo de hoy es más sentimental, mas descriptivo.
-queda poco para una actualizacion novedosa de esta pagina.
-que deseo incluir de hace un tiempo,
-pero no deseo hablarte de esas cosas. quiero que una vez más, veas todo el amor
-que tengo en ti, que no quiero que haya dia que te sientas desplazada.
+Los dias pasan, las horas vuelan contigo.
+y aprovecho al mazimo cada minuto contigo, si no te tengo
+te llamo, si no te llamo te escribo, pero no me quedo con las ganas
+soy muy consciente de que la vida se nos va en un abrir y cerrar de ojos.
+y quiero que esa vida sea completamente dedicada a Dios y a mi esposa.
 
-No quiero que te sientas de esa manera, asi que hoy quiero recordarte
-que eres mi reina hermosa, sin ti, mi reino se desploma
-tienes un lugar en micorazon, unico, irremplazable.
-nadie en esta tierra nunca va a poder llegar a ese lugar.
-Te amo
+tengo aun millones de ideas y sopresas para ti, asi que jamás caeremos en la monotonia.
+incansable es el amor que te tengo, insaciable.
+en alguna carta de por ahi te lo dije.
+y te tengo una sopresa hoy...
 </div>
 
 <div class="section">
   
 <div class="binary">
-- .   .- -- ---   .- -- --- .-. --..--   . ... .--. . .-. ---   --.- ..- .   -. ---   - .   ..-. .- ... - .. -.. .. .   -.. . -.. .. -.-. .- .-.   - .- -. - ---   - .. . -- .--. ---   . -.   .-. . ... --- .-.. ...- . .-.   .--. ..- --.. --.. .-.. . ... .-.-.- 
+5-14 / 21-14-1 / 4-5 / 12-1-19 / 3-1-18-20-1-19 / 17-21-5 / 20-5 / 5-19-3-18-9-2-9: 01101000 01100001 01111001 00100000 01110101 01101110 00100000 01110011 01100101 01100011 01110010 01100101 01110100 01101111 00100000 01100101 01110011 01100011 01101111 01101110 01100100 01101001 01100100 01101111
 </div>
 
 </div>
@@ -664,13 +662,13 @@ updateTimeline()
 /* post it */
 
 const textos=[
-"???",
-"bebe?",
-"este dia ya te hice sentir amada bebe, pasa al siguiente",
-"MI AMOOOOOOOOOOOOOORRRRRR TE AMO TE AMO TE AMOOOOOOOOO, y si, creo que te debo 2 castigos y muchos ataques de besos, vas a tener que pedirmelos, TE AMO BEBE!!",
-"...",
-"como le gusta indagar, por hoy no te voy a castigar, la proxima actualizacion será mas.... ",
-"mas...",
+"te amo.",
+"TE AMOOOOOO",
+"TE REEEAAAMOOO AMORRRRRR!! hoy seguramente leas esto cuando ya estemos en casita resolviendo mis puzzles, TE AMOOO",
+"TE REMEGA SUPER HIPER DUPER AMO",
+"me encantas amor, porfiadita me encantas",
+"pero no te pases",
+"Castigada... pero aún sigo pensando en como",
 
 ]
 
@@ -685,9 +683,13 @@ function openLetter(){
 document.getElementById("modal").style.display="flex"
 document.getElementById("modalContent").innerHTML=
 `Querida mía,<br><br>
-el post-it del dia 7 te dejo a mitad?, un secretito por aqui, no voy a dejar el trabajo incompleto.
-seguramente la proxima actualizacion sea un tanto mas personal.
-más de nosotros.
+Espera aún la actualización.
+Logra descifrar los puzzles.
+Reemplaza las 2 R por tu resultado.
+Realmente me tienes enamorado.
+Amada mia, Perfecta mía.
+Busca entre las abrievaturas.
+Revisa entre las fechas.
 <br><br>
 — El Rey`
 }
