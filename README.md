@@ -445,11 +445,8 @@ box-shadow:0 0 6px rgba(0,0,0,0.4);
 Este lugar existe porque nuestras historias se cruzaron,
 porque el tiempo decidió detenerse en ciertos momentos,
 y porque cada recuerdo contigo merece ser guardado.
-MI AMOOOORRRRRR!!!!!!!!
-Siento mucho gozo al recordar la razón por la cual sostenemos
-esta relación, y es que desde el inicio nos encaminamos
-a casarnos y a vivir una vida juntos.
-por eso la actualización de hoy es: "El futuro"
+FELICES 8 MESES!!!
+"La elección"
 </p>
 
 <div class="section">
@@ -457,12 +454,9 @@ por eso la actualización de hoy es: "El futuro"
 <div>
 <p>
 Te amo.
-TE AMO! con todo mi corazón.
-solo espero en Dios que él nos siga ayudando 
-en las adversidades, y que levante una pareja de valor.
-quería refermirme al futuro como algo que no podemos controlar.
-pero por medio de la fe, podemos saber por gracia que tu y yo.
-terminaremos juntos.
+Estos dias han sido movidos para nosotros.
+pero jamás me olvidé de ti amor.
+esta actualización se llama "la elección"
 </p>
 </div>
 
@@ -520,22 +514,34 @@ terminaremos juntos.
 
 <div class="cipher">
 
-Los dias pasan, las horas vuelan contigo.
-y aprovecho al mazimo cada minuto contigo, si no te tengo
-te llamo, si no te llamo te escribo, pero no me quedo con las ganas
-soy muy consciente de que la vida se nos va en un abrir y cerrar de ojos.
-y quiero que esa vida sea completamente dedicada a Dios y a mi esposa.
+Diré incansablemente lo mucho que te amo.
+pero este Dia, o el de ayer no sé, es epsecial.
+si estas leyendo esto es porque encontré la oportunidad de decirtelo.
 
-tengo aun millones de ideas y sopresas para ti, asi que jamás caeremos en la monotonia.
-incansable es el amor que te tengo, insaciable.
-en alguna carta de por ahi te lo dije.
-y te tengo una sopresa hoy...
+tu madre siempre me dijo que eras complicada.
+siempre me advirtio de ti.
+pero no me importaba, porque no puedo estar mas seguro de lo que quiero en mi vida. que eres tu.
+
 </div>
 
 <div class="section">
   
 <div class="binary">
-5-14 / 21-14-1 / 4-5 / 12-1-19 / 3-1-18-20-1-19 / 17-21-5 / 20-5 / 5-19-3-18-9-2-9: 01101000 01100001 01111001 00100000 01110101 01101110 00100000 01110011 01100101 01100011 01110010 01100101 01110100 01101111 00100000 01100101 01110011 01100011 01101111 01101110 01100100 01101001 01100100 01101111
+hoy no hay puzzles, hay verdad.
+los post-it con dias contienen las razones de por qué te selecioné a ti.
+
+hoy queria recordarte que te escogí a ti.
+en los buenos, y malos momentos.
+te escogí aun en medio del dolor.
+te escogí en medio del resentimiento.
+y esta semana, te seguí escogiendo.
+
+eres mi amada, la mujer que quiero en mi vida.
+y no me cansaré de decirtelo, de lucharlo, de amarte.
+
+porque a fin de cuentas, eso es el amor:
+
+seleccionar, en medio de la adversidad.
 </div>
 
 </div>
@@ -662,13 +668,13 @@ updateTimeline()
 /* post it */
 
 const textos=[
-"te amo.",
-"TE AMOOOOOO",
-"TE REEEAAAMOOO AMORRRRRR!! hoy seguramente leas esto cuando ya estemos en casita resolviendo mis puzzles, TE AMOOO",
-"TE REMEGA SUPER HIPER DUPER AMO",
-"me encantas amor, porfiadita me encantas",
-"pero no te pases",
-"Castigada... pero aún sigo pensando en como",
+"Me fijé en ti por tu corazón, por tu alma, porque eres una perla preciosa entre piedras",
+"Te hablé porque vi en ti cosas que tú aún no ves, porque vi una amiga, una compañera, porque vi inocencia en un mundo destruido",
+"Me confesé porque sabía que el señor me estaba permitiendo sentir por ti, porque no era normal lo que sentía cuando le hablaba a Dios de ti.",
+"Te pedí formalizar, porque estoy seguro de que eras tú, quien queria en mi vida, porque Dios me habló, me estremeció, me hizo llorar, y me respondió.",
+"Te besé porque las palabras no daban a basto, porque quería demostrate que SOLO ERES TÚ, y que te escogí",
+"Te escogí, por tu corazón, por que veo cosas en ti, porque veo futuro en ti, porque Dios lo confirmó, porque estoy dispuesto a vivir una vida contigo.",
+"Y a pesar de que me digan: Te equivocaste, Elegiste mal, te advertí, El señor reprenda el enemigo, porque la duda no es bienvenida en un corazón que elgió también, creer en lo que Dios dijo: Ahí es.",
 
 ]
 
@@ -683,13 +689,16 @@ function openLetter(){
 document.getElementById("modal").style.display="flex"
 document.getElementById("modalContent").innerHTML=
 `Querida mía,<br><br>
-Espera aún la actualización.
-Logra descifrar los puzzles.
-Reemplaza las 2 R por tu resultado.
-Realmente me tienes enamorado.
-Amada mia, Perfecta mía.
-Busca entre las abrievaturas.
-Revisa entre las fechas.
+Preciosa, yo te amo.
+y cada post-it tambien representa que no solo te elegí en el pololeo, o en la adversidad, te elegí, en ese encuentro de Dorcas, pero mas importante aún:
+Dios te seleccionó para mi
+Dios me seleccionó para ti
+asi que no dudemos
+ni en la adversidad
+ni en la incredulidad 
+ni en la prueba 
+El amor es mas fuerte.
+¿O no?
 <br><br>
 — El Rey`
 }
