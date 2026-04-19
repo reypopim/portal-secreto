@@ -417,7 +417,7 @@ box-shadow:0 0 6px rgba(0,0,0,0.4);
 <div id="page1">
 
 <h1>Nuestro portal secreto</h1>
-<h2>00110000 00111000</h2>
+<h2>La elección</h2>
 
 <div class="code-box">
 <input maxlength="1">
@@ -446,7 +446,6 @@ Este lugar existe porque nuestras historias se cruzaron,
 porque el tiempo decidió detenerse en ciertos momentos,
 y porque cada recuerdo contigo merece ser guardado.
 FELICES 8 MESES!!!
-"La elección"
 </p>
 
 <div class="section">
