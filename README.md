@@ -405,6 +405,16 @@ border-radius:50%;
 box-shadow:0 0 6px rgba(0,0,0,0.4);
 }
 
+#world{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:999;
+}
+
 </style>
 </head>
 
@@ -434,6 +444,8 @@ box-shadow:0 0 6px rgba(0,0,0,0.4);
 <!-- PAGINA 2 -->
 
 <div id="page2">
+
+<canvas id="world"></canvas>
 
 <div class="topbar">
 <div class="exit" onclick="salir()">← Salida</div>
@@ -565,6 +577,10 @@ seleccionar, en medio de la adversidad.
 <div class="modal" id="modal" onclick="closeModal(event)">
 <div class="modal-content" id="modalContent"></div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+
 
 <script>
 
@@ -709,6 +725,141 @@ if(e.target.id==="modal"){
 document.getElementById("modal").style.display="none"
 }
 
+}
+
+const {
+Engine, Render, Runner, Bodies, World, Events, Body
+} = Matter;
+
+// motor
+const engine = Engine.create();
+const world = engine.world;
+
+// render
+const render = Render.create({
+canvas: document.getElementById("world"),
+engine: engine,
+options: {
+width: window.innerWidth,
+height: window.innerHeight,
+wireframes: false,
+background: "transparent"
+}
+});
+
+Render.run(render);
+Runner.run(Runner.create(), engine);
+
+// paredes (límites)
+const walls = [
+Bodies.rectangle(window.innerWidth/2, -10, window.innerWidth, 20, { isStatic:true }),
+Bodies.rectangle(window.innerWidth/2, window.innerHeight+10, window.innerWidth, 20, { isStatic:true }),
+Bodies.rectangle(-10, window.innerHeight/2, 20, window.innerHeight, { isStatic:true }),
+Bodies.rectangle(window.innerWidth+10, window.innerHeight/2, 20, window.innerHeight, { isStatic:true })
+];
+
+World.add(world, walls);
+
+// 🔊 sonidos
+const hitSound = new Howl({ src: ['hit.mp3'], volume: 0.4 });
+const wrongSound = new Howl({ src: ['wrong.mp3'], volume: 0.5 });
+const unlockSound = new Howl({ src: ['unlock.mp3'], volume: 0.7 });
+
+// crear llaves
+let keys = [];
+for(let i=1;i<=6;i++){
+let key = Bodies.circle(
+100 + i*60,
+100,
+15,
+{
+restitution: 0.9, // rebote
+friction: 0.001,
+label: "key",
+day: i,
+render: { fillStyle: "#f0dfc5" }
+}
+);
+keys.push(key);
+}
+
+World.add(world, keys);
+
+// crear candados (ejemplo 7)
+let locks = [];
+for(let i=1;i<=7;i++){
+let lock = Bodies.rectangle(
+300 + i*80,
+400,
+40,
+40,
+{
+isStatic:true,
+label:"lock",
+day:i,
+render:{ fillStyle:"#8b1e3f" }
+}
+);
+locks.push(lock);
+}
+
+World.add(world, locks);
+
+// 🖱 arrastre (simple pero fluido)
+window.addEventListener("mousemove", e=>{
+keys.forEach(k=>{
+if(k.isDragging){
+Body.setPosition(k, {x:e.clientX, y:e.clientY});
+}
+});
+});
+
+window.addEventListener("mousedown", e=>{
+keys.forEach(k=>{
+const dx = e.clientX - k.position.x;
+const dy = e.clientY - k.position.y;
+if(Math.sqrt(dx*dx + dy*dy) < 20){
+k.isDragging = true;
+}
+});
+});
+
+window.addEventListener("mouseup", ()=>{
+keys.forEach(k=>k.isDragging=false);
+});
+
+// 💥 colisiones
+Events.on(engine, "collisionStart", event=>{
+event.pairs.forEach(pair=>{
+const { bodyA, bodyB } = pair;
+
+if(bodyA.label==="key" && bodyB.label==="lock"){
+handleUnlock(bodyA, bodyB);
+}
+if(bodyB.label==="key" && bodyA.label==="lock"){
+handleUnlock(bodyB, bodyA);
+}
+
+// sonido paredes
+if(bodyA.label==="key" || bodyB.label==="key"){
+hitSound.play();
+}
+
+});
+});
+
+// 🔓 lógica
+function handleUnlock(key, lock){
+if(key.day === lock.day){
+unlockSound.play();
+
+// candado se vuelve físico
+Body.setStatic(lock, false);
+Body.setVelocity(lock, {x: (Math.random()-0.5)*5, y:-5});
+
+} else {
+wrongSound.play();
+}
 }
 
 </script>
