@@ -415,6 +415,20 @@ pointer-events:none;
 z-index:999;
 }
 
+.locked{
+position:relative;
+opacity:0.6;
+}
+
+.locked::after{
+content:"🔒";
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:28px;
+}
+
 </style>
 </head>
 
@@ -484,46 +498,39 @@ esta actualización se llama "la elección"
 
 <div class="postits">
 
-<div class="postit" onclick="openPost(1)">
+<div class="postit" onclick="openPost(1)" data-day="1">
 <div class="postit-number">1</div>
 <div class="postit-day">Día</div>
-<div class="postit" data-day="1">...</div>
 </div>
 
-<div class="postit" onclick="openPost(2)">
+<div class="postit" onclick="openPost(2)" data-day="2">
 <div class="postit-number">2</div>
 <div class="postit-day">Día</div>
-<div class="postit" data-day="2">...</div>
 </div>
 
-<div class="postit" onclick="openPost(3)">
+<div class="postit" onclick="openPost(3)" data-day="3">
 <div class="postit-number">3</div>
 <div class="postit-day">Día</div>
-<div class="postit" data-day="3">...</div>
 </div>
 
-<div class="postit" onclick="openPost(4)">
+<div class="postit" onclick="openPost(4)" data-day="4">
 <div class="postit-number">4</div>
 <div class="postit-day">Día</div>
-<div class="postit" data-day="4">...</div>
 </div>
 
-<div class="postit" onclick="openPost(5)">
+<div class="postit" onclick="openPost(5)" data-day="5">
 <div class="postit-number">5</div>
 <div class="postit-day">Día</div>
-<div class="postit" data-day="5">...</div>
 </div>
 
-<div class="postit" onclick="openPost(6)">
+<div class="postit" onclick="openPost(6)" data-day="6">
 <div class="postit-number">6</div>
 <div class="postit-day">Día</div>
-<div class="postit" data-day="6">...</div>
 </div>
 
-<div class="postit" onclick="openPost(7)">
+<div class="postit" onclick="openPost(7)" data-day="7">
 <div class="postit-number">7</div>
 <div class="postit-day">Día</div>
-<div class="postit" data-day="7">...</div>
 </div>
 
 </div>
@@ -879,19 +886,6 @@ p.classList.add("locked");
 }
 });
 
-.locked{
-position:relative;
-opacity:0.6;
-}
-
-.locked::after{
-content:"🔒";
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-font-size:28px;
-}
 </script>
 
 </body>
