@@ -792,22 +792,30 @@ const unlockSound = new Howl({ src: ['unlock.mp3'], volume: 0.7 });
 
 // crear llaves
 let keys = [];
-for(let i=1;i<=6;i++){
+
+for(let i=1;i<=7;i++){
+
 let key = Bodies.circle(
 100 + i*60,
 100,
 15,
 {
-restitution: 0.4,
+restitution: 0.2,
 friction: 0,
-frictionAir: 0.01
+frictionAir: 0.08,
 label: "key",
 day: i,
-render: { fillStyle: "#f0dfc5" }
+render: {
+fillStyle: "#f0dfc5"
+}
 }
 );
+
 keys.push(key);
+
 }
+
+World.add(world, keys);
 
 World.add(world, keys);
 
@@ -889,7 +897,7 @@ let x = rect.left + rect.width/2 + window.scrollX
 let y = rect.top + rect.height/2 + window.scrollY
 
 Body.setPosition(lock, { x, y })
-Body.setVelocity(lock, { x:0, y:0 }) // 🔒 evita que "derrape")
+Body.setVelocity(lock, { x:0, y:0 }) // 🔒 evita que "derrape"
 
 })
 
