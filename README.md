@@ -764,10 +764,11 @@ width: window.innerWidth,
 height: document.body.scrollHeight,
 wireframes: false,
 background: "transparent"
-engine.world.gravity.y = 0
-engine.world.gravity.x = 0
 }
 });
+
+engine.world.gravity.y = 0
+engine.world.gravity.x = 0
 
 Render.run(render);
 Runner.run(Runner.create(), engine);
@@ -797,7 +798,7 @@ let key = Bodies.circle(
 {
 friction: 0,
 frictionAir: 0.002,
-inertia: Infinity // ❌ quítalo si lo tienes
+inertia: Infinity, // ❌ quítalo si lo tienes
 restitution: 0.95,
 label: "key",
 day: i,
@@ -823,7 +824,7 @@ rect.top + rect.height/2,
 {
 friction: 0,
 frictionAir: 0.002,
-inertia: Infinity // ❌ quítalo si lo tienes
+inertia: Infinity, // ❌ quítalo si lo tienes
 restitution: 0.9,
 isStatic:true,
 label:"lock",
@@ -912,10 +913,16 @@ if(bodyB.label==="key" && bodyA.label==="lock"){
 handleUnlock(bodyB, bodyA);
 }
 
-Body.setAngularVelocity(key, (Math.random()-0.5)*0.3)
-Body.setAngularVelocity(lock, (Math.random()-0.5)*0.3)
+Body.setAngularVelocity(bodyA, (Math.random()-0.5)*0.3)
+Body.setAngularVelocity(bodyB, (Math.random()-0.5)*0.3)
 
+// sonido paredes
+if(bodyA.label==="key" || bodyB.label==="key"){
+hitSound.play();
+}
 
+});
+});
 
 Events.on(engine, "beforeUpdate", ()=>{
 
@@ -931,14 +938,6 @@ if(k.position.y > document.body.scrollHeight-20) Body.setVelocity(k, {x: k.veloc
 })
 
 })
-
-// sonido paredes
-if(bodyA.label==="key" || bodyB.label==="key"){
-hitSound.play();
-}
-
-});
-});
 
 // 🔓 lógica
 function handleUnlock(key, lock){
