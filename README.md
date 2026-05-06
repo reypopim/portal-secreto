@@ -774,11 +774,13 @@ Render.run(render);
 Runner.run(Runner.create(), engine);
 
 // paredes (límites)
+const worldHeight = document.body.scrollHeight;
+
 const walls = [
-Bodies.rectangle(window.innerWidth/2, -10, window.innerWidth, 20, { isStatic:true }),
-Bodies.rectangle(window.innerWidth/2, window.innerHeight+10, window.innerWidth, 20, { isStatic:true }),
-Bodies.rectangle(-10, window.innerHeight/2, 20, window.innerHeight, { isStatic:true }),
-Bodies.rectangle(window.innerWidth+10, window.innerHeight/2, 20, window.innerHeight, { isStatic:true })
+Bodies.rectangle(window.innerWidth/2, -20, window.innerWidth, 40, { isStatic:true }),
+Bodies.rectangle(window.innerWidth/2, worldHeight+20, window.innerWidth, 40, { isStatic:true }),
+Bodies.rectangle(-20, worldHeight/2, 40, worldHeight, { isStatic:true }),
+Bodies.rectangle(window.innerWidth+20, worldHeight/2, 40, worldHeight, { isStatic:true })
 ];
 
 World.add(world, walls);
@@ -796,10 +798,9 @@ let key = Bodies.circle(
 100,
 15,
 {
+restitution: 0.4,
 friction: 0,
-frictionAir: 0.002,
-inertia: Infinity, // ❌ quítalo si lo tienes
-restitution: 0.95,
+frictionAir: 0.01
 label: "key",
 day: i,
 render: { fillStyle: "#f0dfc5" }
@@ -814,7 +815,12 @@ World.add(world, keys);
 let locks = [];
 for(let i=1;i<=7;i++){
 let post = document.querySelector(`.postit[data-day="${i}"]`)
-let rect = post.getBoundingClientRect()
+let rect = lock.postElement.getBoundingClientRect()
+
+let x = rect.left + rect.width/2 + window.scrollX
+let y = rect.top + rect.height/2 + window.scrollY
+
+Matter.Body.setPosition(lock, { x, y })
 
 let lock = Bodies.rectangle(
 rect.left + rect.width/2,
@@ -822,10 +828,9 @@ rect.top + rect.height/2,
 40,
 40,
 {
+restitution: 0.4,
 friction: 0,
-frictionAir: 0.002,
-inertia: Infinity, // ❌ quítalo si lo tienes
-restitution: 0.9,
+frictionAir: 0.01
 isStatic:true,
 label:"lock",
 day:i,
@@ -875,18 +880,20 @@ y: (Math.random()-0.5)*8
 })
 
 window.addEventListener("scroll", ()=>{
+
 locks.forEach(lock=>{
 
-if(lock.unlocked) return // 🔥 clave: no tocar si ya se liberó
+if(lock.unlocked) return
 
-const rect = lock.postElement.getBoundingClientRect()
+let rect = lock.postElement.getBoundingClientRect()
 
-Matter.Body.setPosition(lock, {
-x: rect.left + rect.width/2,
-y: rect.top + rect.height/2
+let x = rect.left + rect.width/2 + window.scrollX
+let y = rect.top + rect.height/2 + window.scrollY
+
+Matter.Body.setPosition(lock, { x, y })
+
 })
 
-})
 })
 
 window.addEventListener("resize", ()=>{
@@ -960,6 +967,17 @@ Body.setVelocity(lock, {x:(Math.random()-0.5)*5, y:-5})
 } else {
 wrongSound.play()
 }
+
+// desaparecer llave usada
+setTimeout(()=>{
+World.remove(world, key);
+}, 300);
+
+// desvanecer candado
+setTimeout(()=>{
+World.remove(world, lock);
+}, 800);
+
 }
  window.addEventListener("load", ()=>{
   const today = (new Date().getDay() || 7);
