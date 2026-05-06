@@ -796,26 +796,32 @@ let keys = [];
 for(let i=1;i<=7;i++){
 
 let key = Bodies.circle(
-100 + i*60,
-100,
+
+Math.random() * (window.innerWidth - 100) + 50,
+
+Math.random() * (window.innerHeight - 200) + 100,
+
 15,
+
 {
-restitution: 0.2,
+restitution: 0.05,
 friction: 0,
-frictionAir: 0.08,
+frictionAir: 0.015,
+density: 0.002,
+
 label: "key",
 day: i,
-render: {
-fillStyle: "#f0dfc5"
+
+render:{
+fillStyle:"#f0dfc5"
 }
 }
+
 );
 
 keys.push(key);
 
 }
-
-World.add(world, keys);
 
 World.add(world, keys);
 
@@ -851,14 +857,31 @@ locks.push(lock);
 World.add(world, locks);
 
 // 🖱 arrastre (simple pero fluido)
-window.addEventListener("mousemove", e=>{
-keys.forEach(k=>{
-if(k.isDragging){
-Body.setPosition(k, {x:e.clientX, y:e.clientY});
-}
-});
-});
+let mouseVelocity = { x:0, y:0 }
 
+let lastMouse = { x:0, y:0 }
+window.addEventListener("mousemove", e=>{
+
+mouseVelocity.x = e.clientX - lastMouse.x
+mouseVelocity.y = e.clientY - lastMouse.y
+
+lastMouse.x = e.clientX
+lastMouse.y = e.clientY
+
+keys.forEach(k=>{
+
+if(k.isDragging){
+
+Body.setPosition(k,{
+x:e.clientX,
+y:e.clientY
+})
+
+}
+
+})
+
+})
 window.addEventListener("mousedown", e=>{
 keys.forEach(k=>{
 const dx = e.clientX - k.position.x;
@@ -869,23 +892,28 @@ k.isDragging = true;
 });
 });
 
-window.addEventListener("mouseup", e=>{
+window.addEventListener("mouseup", ()=>{
+
 keys.forEach(k=>{
+
 if(k.isDragging){
 
 k.isDragging = false
 
-// impulso tipo lanzamiento
-Body.setVelocity(k, {
-x: (Math.random()-0.5)*2,
-y: (Math.random()-0.5)*2
+Body.setVelocity(k,{
+
+x: mouseVelocity.x * 0.35,
+
+y: mouseVelocity.y * 0.35
+
 })
 
 }
-})
+
 })
 
-window.addEventListener("scroll", ()=>{
+})
+function updateLocksPosition(){
 
 locks.forEach(lock=>{
 
@@ -893,15 +921,24 @@ if(lock.unlocked) return
 
 let rect = lock.postElement.getBoundingClientRect()
 
-let x = rect.left + rect.width/2 + window.scrollX
-let y = rect.top + rect.height/2 + window.scrollY
+let x = rect.left + rect.width/2
+let y = rect.top + rect.height/2
 
-Body.setPosition(lock, { x, y })
-Body.setVelocity(lock, { x:0, y:0 }) // 🔒 evita que "derrape"
+Body.setPosition(lock,{x,y})
+
+Body.setVelocity(lock,{x:0,y:0})
+
+Body.setAngularVelocity(lock,0)
+
+Body.setAngle(lock,0)
 
 })
 
-})
+}
+
+window.addEventListener("scroll", updateLocksPosition)
+
+window.addEventListener("resize", updateLocksPosition)
 
 window.addEventListener("resize", ()=>{
 render.canvas.width = window.innerWidth
@@ -939,6 +976,25 @@ hitSound.play();
 });
 
 Events.on(engine, "beforeUpdate", ()=>{
+
+locks.forEach(lock=>{
+
+if(lock.unlocked) return
+
+let rect = lock.postElement.getBoundingClientRect()
+
+Body.setPosition(lock,{
+x: rect.left + rect.width/2,
+y: rect.top + rect.height/2
+})
+
+Body.setVelocity(lock,{x:0,y:0})
+
+Body.setAngularVelocity(lock,0)
+
+Body.setAngle(lock,0)
+
+})
 
 keys.forEach(k=>{
 
