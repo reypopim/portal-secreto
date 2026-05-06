@@ -487,6 +487,7 @@ esta actualización se llama "la elección"
 <div class="postit" onclick="openPost(1)">
 <div class="postit-number">1</div>
 <div class="postit-day">Día</div>
+<div class="postit" data-day="1">...</div>
 </div>
 
 <div class="postit" onclick="openPost(2)">
@@ -861,6 +862,16 @@ Body.setVelocity(lock, {x: (Math.random()-0.5)*5, y:-5});
 wrongSound.play();
 }
 }
+
+  // 🔒 BLOQUEO POR DÍA
+const today = (new Date().getDay() || 7); // 1–7
+
+document.querySelectorAll(".postit").forEach(p=>{
+const d = parseInt(p.dataset.day);
+if(d !== today){
+p.classList.add("locked");
+}
+});
 
 </script>
 
