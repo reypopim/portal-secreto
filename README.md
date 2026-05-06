@@ -761,9 +761,11 @@ canvas: document.getElementById("world"),
 engine: engine,
 options: {
 width: window.innerWidth,
-height: window.innerHeight,
+height: document.body.scrollHeight,
 wireframes: false,
 background: "transparent"
+engine.world.gravity.y = 0
+engine.world.gravity.x = 0
 }
 });
 
@@ -794,7 +796,8 @@ let key = Bodies.circle(
 15,
 {
 friction: 0,
-frictionAir: 0.001,
+frictionAir: 0.002,
+inertia: Infinity // ❌ quítalo si lo tienes
 restitution: 0.95,
 label: "key",
 day: i,
@@ -819,7 +822,8 @@ rect.top + rect.height/2,
 40,
 {
 friction: 0,
-frictionAir: 0.001,
+frictionAir: 0.002,
+inertia: Infinity // ❌ quítalo si lo tienes
 restitution: 0.9,
 isStatic:true,
 label:"lock",
@@ -853,25 +857,53 @@ k.isDragging = true;
 });
 });
 
-window.addEventListener("mouseup", ()=>{
-keys.forEach(k=>k.isDragging=false);
-});
+window.addEventListener("mouseup", e=>{
+keys.forEach(k=>{
+if(k.isDragging){
+
+k.isDragging = false
+
+// impulso tipo lanzamiento
+Body.setVelocity(k, {
+x: (Math.random()-0.5)*8,
+y: (Math.random()-0.5)*8
+})
+
+}
+})
+})
 
 window.addEventListener("scroll", ()=>{
 locks.forEach(lock=>{
+
+if(lock.unlocked) return // 🔥 clave: no tocar si ya se liberó
+
 const rect = lock.postElement.getBoundingClientRect()
 
 Matter.Body.setPosition(lock, {
 x: rect.left + rect.width/2,
 y: rect.top + rect.height/2
 })
+
 })
+})
+
+window.addEventListener("resize", ()=>{
+render.canvas.width = window.innerWidth
+render.canvas.height = document.body.scrollHeight
 })
 
 // 💥 colisiones
 Events.on(engine, "collisionStart", event=>{
 event.pairs.forEach(pair=>{
 const { bodyA, bodyB } = pair;
+const speed = Math.sqrt(
+bodyA.velocity.x**2 + bodyA.velocity.y**2
+)
+
+if(speed > 2){
+hitSound.play()
+}
 
 if(bodyA.label==="key" && bodyB.label==="lock"){
 handleUnlock(bodyA, bodyB);
@@ -879,6 +911,26 @@ handleUnlock(bodyA, bodyB);
 if(bodyB.label==="key" && bodyA.label==="lock"){
 handleUnlock(bodyB, bodyA);
 }
+
+Body.setAngularVelocity(key, (Math.random()-0.5)*0.3)
+Body.setAngularVelocity(lock, (Math.random()-0.5)*0.3)
+
+
+
+Events.on(engine, "beforeUpdate", ()=>{
+
+keys.forEach(k=>{
+
+// rebote suave contra límites invisibles
+if(k.position.x < 20) Body.setVelocity(k, {x: 3, y: k.velocity.y})
+if(k.position.x > window.innerWidth-20) Body.setVelocity(k, {x: -3, y: k.velocity.y})
+
+if(k.position.y < 20) Body.setVelocity(k, {x: k.velocity.x, y: 3})
+if(k.position.y > document.body.scrollHeight-20) Body.setVelocity(k, {x: k.velocity.x, y: -3})
+
+})
+
+})
 
 // sonido paredes
 if(bodyA.label==="key" || bodyB.label==="key"){
