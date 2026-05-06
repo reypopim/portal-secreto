@@ -761,7 +761,7 @@ canvas: document.getElementById("world"),
 engine: engine,
 options: {
 width: window.innerWidth,
-height: document.body.scrollHeight,
+height: window.innerHeight,
 wireframes: false,
 background: "transparent"
 }
@@ -815,22 +815,20 @@ World.add(world, keys);
 let locks = [];
 for(let i=1;i<=7;i++){
 let post = document.querySelector(`.postit[data-day="${i}"]`)
-let rect = lock.postElement.getBoundingClientRect()
+let rect = post.getBoundingClientRect()
 
 let x = rect.left + rect.width/2 + window.scrollX
 let y = rect.top + rect.height/2 + window.scrollY
 
-Matter.Body.setPosition(lock, { x, y })
-
 let lock = Bodies.rectangle(
-rect.left + rect.width/2,
-rect.top + rect.height/2,
+x,
+y,
 40,
 40,
 {
 restitution: 0.4,
 friction: 0,
-frictionAir: 0.01
+frictionAir: 0.01, 
 isStatic:true,
 label:"lock",
 day:i,
@@ -838,7 +836,7 @@ render:{ fillStyle:"#8b1e3f" }
 }
 );
 
-lock.postElement = post // 🔥 conexión clave
+lock.postElement = post
 locks.push(lock);
 }
 
@@ -871,8 +869,8 @@ k.isDragging = false
 
 // impulso tipo lanzamiento
 Body.setVelocity(k, {
-x: (Math.random()-0.5)*8,
-y: (Math.random()-0.5)*8
+x: (Math.random()-0.5)*2,
+y: (Math.random()-0.5)*2
 })
 
 }
@@ -890,7 +888,8 @@ let rect = lock.postElement.getBoundingClientRect()
 let x = rect.left + rect.width/2 + window.scrollX
 let y = rect.top + rect.height/2 + window.scrollY
 
-Matter.Body.setPosition(lock, { x, y })
+Body.setPosition(lock, { x, y })
+Body.setVelocity(lock, { x:0, y:0 }) // 🔒 evita que "derrape")
 
 })
 
