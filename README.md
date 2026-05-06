@@ -708,6 +708,12 @@ const textos=[
 ]
 
 function openPost(i){
+const post = document.querySelector(`.postit[data-day="${i}"]`)
+
+if(post.classList.contains("locked")){
+return // 🚫 bloqueado, no hace nada
+}
+
 document.getElementById("modal").style.display="flex"
 document.getElementById("modalContent").innerText=textos[i-1]
 }
@@ -787,8 +793,9 @@ let key = Bodies.circle(
 100,
 15,
 {
-restitution: 0.9, // rebote
-friction: 0.001,
+friction: 0,
+frictionAir: 0.001,
+restitution: 0.95,
 label: "key",
 day: i,
 render: { fillStyle: "#f0dfc5" }
@@ -802,18 +809,26 @@ World.add(world, keys);
 // crear candados (ejemplo 7)
 let locks = [];
 for(let i=1;i<=7;i++){
+let post = document.querySelector(`.postit[data-day="${i}"]`)
+let rect = post.getBoundingClientRect()
+
 let lock = Bodies.rectangle(
-300 + i*80,
-400,
+rect.left + rect.width/2,
+rect.top + rect.height/2,
 40,
 40,
 {
+friction: 0,
+frictionAir: 0.001,
+restitution: 0.9,
 isStatic:true,
 label:"lock",
 day:i,
 render:{ fillStyle:"#8b1e3f" }
 }
 );
+
+lock.postElement = post // 🔥 conexión clave
 locks.push(lock);
 }
 
@@ -842,6 +857,17 @@ window.addEventListener("mouseup", ()=>{
 keys.forEach(k=>k.isDragging=false);
 });
 
+window.addEventListener("scroll", ()=>{
+locks.forEach(lock=>{
+const rect = lock.postElement.getBoundingClientRect()
+
+Matter.Body.setPosition(lock, {
+x: rect.left + rect.width/2,
+y: rect.top + rect.height/2
+})
+})
+})
+
 // 💥 colisiones
 Events.on(engine, "collisionStart", event=>{
 event.pairs.forEach(pair=>{
@@ -864,18 +890,26 @@ hitSound.play();
 
 // 🔓 lógica
 function handleUnlock(key, lock){
-if(key.day === lock.day){
-unlockSound.play();
 
-// candado se vuelve físico
-Body.setStatic(lock, false);
-Body.setVelocity(lock, {x: (Math.random()-0.5)*5, y:-5});
+if(lock.unlocked) return // evita repetir
+
+if(key.day === lock.day){
+
+unlockSound.play()
+
+lock.unlocked = true
+
+// 🔓 quitar bloqueo visual
+lock.postElement.classList.remove("locked")
+
+// 💥 convertir en físico (cae)
+Body.setStatic(lock, false)
+Body.setVelocity(lock, {x:(Math.random()-0.5)*5, y:-5})
 
 } else {
-wrongSound.play();
+wrongSound.play()
 }
 }
-
  window.addEventListener("load", ()=>{
   const today = (new Date().getDay() || 7);
 
