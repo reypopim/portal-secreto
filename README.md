@@ -876,14 +876,15 @@ wrongSound.play();
 }
 }
 
-  // 🔒 BLOQUEO POR DÍA
-const today = (new Date().getDay() || 7); // 1–7
+ window.addEventListener("load", ()=>{
+  const today = (new Date().getDay() || 7);
 
-document.querySelectorAll(".postit").forEach(p=>{
-const d = parseInt(p.dataset.day);
-if(d !== today){
-p.classList.add("locked");
-}
+  document.querySelectorAll(".postit").forEach(p=>{
+    const d = parseInt(p.dataset.day);
+    if(d !== today){
+      p.classList.add("locked");
+    }
+  });
 });
 
 </script>
