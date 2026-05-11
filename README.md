@@ -846,7 +846,15 @@ frictionAir: 0.01,
 isStatic:true,
 label:"lock",
 day:i,
-render:{ fillStyle:"#8b1e3f" }
+render:{
+
+sprite:{
+texture:"lock.png",
+xScale:0.12,
+yScale:0.12
+}
+
+}
 }
 );
 
