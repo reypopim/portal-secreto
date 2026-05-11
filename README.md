@@ -625,12 +625,12 @@ let code=""
 inputs.forEach(x=>code+=x.value)
 
 if(code.length==4){
-if(code==="0715"){
+if(code==="9675"){
 document.getElementById("page1").style.display="none"
 document.getElementById("page2").style.display="block"
 }
 else{
-document.getElementById("error").innerText="Inténtalo otra vez, princesa."
+document.getElementById("error").innerText="Página en mantenimiento."
 inputs.forEach(x=>x.value="")
 inputs[0].focus()
 }
