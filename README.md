@@ -482,18 +482,18 @@
         <div class="ribbon" aria-hidden="true"></div>
         <div class="letter-sprig sprig-left" aria-hidden="true"><b class="stem"></b><i style="left:20px;top:18px"></i><i style="left:42px;top:48px"></i><i style="left:15px;top:78px"></i><i style="left:48px;top:105px"></i></div>
         <article class="letter">
-          <h2 id="letter-title">Para mi nubesita</h2>
-          <p class="salutation">“Felicidades mi princesita, parece que aún no pierdes el toque,”</p>
+          <h2 id="letter-title">Para mi nubesita mocha❤️</h2>
+          <p class="salutation">Felicidades mi princesita, parece que aún no pierdes el toque, te adjunto dos palabras sencillas</p>
           <code class="code">01110100 01100101 00100000 01100001 01101101 01101111</code>
-          <code class="code">--.- ..- . / - . / .- -- --- / .. -. ..-. .. -. .. - .- -- . -. - . --..-- / -.-- / .--. .- .-. .- / - --- -.. .- / .-.. .- / ...- .. -.. .- .-.-.</code>
+          <code class="code">.---- ---.. / -.. . / --- -.-. - ..- -... .-. . .-.-.</code>
           <p>Te amo demasiado mi reina hermosa, tanto que busco cada instancia y capacidad para hacerte sentir amada, a veces siento que estas cosas salen feas</p>
-          <p>pero quiero demostrarte mi amor hacia a ti, y mi dedicación de muchas maneras, y si so dedicado ahora, es poque quiero demostrarte que vivirás con un hombre que dedicará atención y mimos hacia su mujer.</p>
+          <p>pero quiero demostrarte mi amor hacia a ti, y mi dedicación de muchas maneras, y si so dedicado ahora, es poque quiero demostrarte que vivirás con un hombre que dedicará mucha atención y mimos hacia su mujer.</p>
           <p>También sabes que no me suele gustar regalar por tradición o moda, si no que lo hago con un fin especifico, espero que estos dias no te hayas sentido mal porque no te llegó algo.</p>
           <p>puedes deducir que la espera es mejor que recibirlo inmediatamente.</p>
           <p>Quiero seguir descubriendo lugares contigo, seguir riéndome de nuestras pequeñas tonterías, superar contigo los días difíciles, celebrar nuestros logros y construir poco a poco ese futuro que tantas veces imaginamos.</p>
           <p>Quiero que algún día podamos mirar hacia atrás y recordar estas primeras primaveras como el comienzo de algo mucho más grande.</p>
           <p>Porque si hoy puedo imaginar un horizonte y verte en él, no es solamente porque te amo.</p>
-          <p>Es porque cuando pienso en el futuro, inevitablemente apareces tú.</p>
+          <p>Es porque tu ya perteneces a mi futuro desde que fue escrito.</p>
           <p>Feliz segunda primavera juntos, mi princesita.</p>
           <p>Que esta sea una de tantas que todavía nos quedan por vivir.</p>
           <p class="signature">Con todo mi amor,<br>Rey ❤️</p>
